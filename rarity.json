@@ -1,0 +1,1038 @@
+{
+    "Daedalus": {
+        "Assault Rifle": {
+            "Type ID": "13",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "DAD_AR.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "DAD_AR.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "DAD_AR.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "DAD_AR.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "72",
+                  "String": "DAD_AR.comp_05_legendary_Lumberjack",
+                  "Legendary": "Bloody Lumberjack"
+                },
+                {
+                  "ID": "73",
+                  "String": "DAD_AR.comp_05_legendary_star_helix",
+                  "Legendary": "Star Helix"
+                },
+                {
+                  "ID": "85",
+                  "String": "DAD_AR.comp_05_legendary_FirstImpression",
+                  "Legendary": "First Impression"
+                },
+                {
+                  "ID": "100",
+                  "String": "DAD_AR.comp_05_legendary_OM",
+                  "Legendary": "Oscar Mike"
+                }
+            ]
+        },
+        "Pistol": {
+            "Type ID": "2",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "DAD_PS.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "DAD_PS.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "DAD_PS.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "DAD_PS.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "54",
+                  "String": "DAD_PS.comp_05_legendary_Zipgun",
+                  "Legendary": "Zipper"
+                },
+                {
+                  "ID": "59",
+                  "String": "DAD_PS.comp_05_legendary_rangefinder",
+                  "Legendary": "Rangefinder"
+                }
+            ]
+        },
+        "Shotgun": {
+            "Type ID": "8",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "DAD_SG.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "DAD_SG.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "DAD_SG.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "DAD_SG.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "53",
+                  "String": "DAD_SG.comp_05_legendary_bod",
+                  "Legendary": "Bod"
+                },
+                {
+                  "ID": "55",
+                  "String": "DAD_SG.comp_05_legendary_HeartGun",
+                  "Legendary": "Acey May"
+                }
+            ]
+        },
+        "SMG": {
+            "Type ID": "20",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "DAD_SM.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "DAD_SM.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "DAD_SM.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "DAD_SM.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "59",
+                  "String": "DAD_SM.comp_05_legendary_Conglomerate",
+                  "Legendary": "Frangible-MISSING"
+                },
+                {
+                  "ID": "63",
+                  "String": "DAD_SM.comp_05_legendary_bloodstarved",
+                  "Legendary": "Darkbeast"
+                },
+                {
+                  "ID": "68",
+                  "String": "DAD_SM.comp_05_legendary_loarmaster",
+                  "Legendary": "Rogue"
+                }
+            ]
+        }
+    },
+    "Jakobs": {
+        "Assault Rifle": {
+            "Type ID": "27",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "JAK_AR.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "JAK_AR.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "JAK_AR.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "JAK_AR.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "1",
+                  "String": "JAK_AR.comp_05_legendary_BonnieClyde",
+                  "Legendary": "Bonnie and Clyde"
+                },
+                {
+                  "ID": "74",
+                  "String": "JAK_AR.comp_05_legendary_rowan",
+                  "Legendary": "Rowan's Charge"
+                },
+                {
+                  "ID": "77",
+                  "String": "JAK_AR.comp_05_legendary_screenwriter",
+                  "Legendary": "INCOMPLETE"
+                }
+            ]
+        },
+        "Pistol": {
+            "Type ID": "3",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "JAK_PS.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "JAK_PS.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "JAK_PS.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "JAK_PS.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "76",
+                  "String": "JAK_PS.comp_05_legendary_kingsgambit",
+                  "Legendary": "King's Gambit"
+                },
+                {
+                  "ID": "78",
+                  "String": "JAK_PS.comp_05_legendary_phantom_flame",
+                  "Legendary": "Phantom Flame"
+                },
+                {
+                  "ID": "79",
+                  "String": "JAK_PS.comp_05_legendary_QuickDraw",
+                  "Legendary": "San Saba Songbird"
+                },
+                {
+                  "ID": "81",
+                  "String": "JAK_PS.comp_05_legendary_seventh_sense",
+                  "Legendary": "Seventh Sense"
+                }
+            ]
+        },
+        "Shotgun": {
+            "Type ID": "9",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "JAK_SG.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "JAK_SG.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "JAK_SG.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "JAK_SG.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "80",
+                  "String": "JAK_SG.comp_05_legendary_Slugger",
+                  "Legendary": "Hot Slugger"
+                },
+                {
+                  "ID": "83",
+                  "String": "JAK_SG.comp_05_legendary_Hellwalker",
+                  "Legendary": "Hellwalker"
+                },
+                {
+                  "ID": "85",
+                  "String": "JAK_SG.comp_05_legendary_RainbowVomit",
+                  "Legendary": "Rainbow Vomit"
+                },
+                {
+                  "ID": "91",
+                  "String": "JAK_SG.comp_05_legendary_TKsWave",
+                  "Legendary": "TK's Wave"
+                }
+            ] 
+        },
+        "Sniper Rifle": {
+            "Type ID": "24",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "JAK_SR.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "JAK_SR.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "JAK_SR.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "JAK_SR.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "1",
+                  "String": "JAK_SR.comp_05_legendary_Boomslang",
+                  "Legendary": "Boomslang"
+                },
+                {
+                  "ID": "73",
+                  "String": "JAK_SR.comp_05_legendary_ballista",
+                  "Legendary": "Borstel Ballista"
+                },
+                {
+                  "ID": "76",
+                  "String": "JAK_SR.comp_05_legendary_Truck",
+                  "Legendary": "Truck"
+                }
+            ]
+        }
+    },
+    "Maliwan": {
+        "Shotgun": {
+            "Type ID": "10",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "MAL_SG.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "MAL_SG.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "MAL_SG.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "MAL_SG.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "1",
+                  "String": "MAL_SG.comp_05_legendary_Kaleidosplode",
+                  "Legendary": "Kaleidosplode"
+                },
+                {
+                  "ID": "57",
+                  "String": "MAL_SG.comp_05_legendary_Sweet_Embrace",
+                  "Legendary": "Sweet Embrace"
+                },
+                {
+                  "ID": "100",
+                  "String": "MAL_SG.comp_05_legendary_Kickballer",
+                  "Legendary": "Kickballer"
+                }
+            ]
+        },
+        "SMG": {
+            "Type ID": "21",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "MAL_SM.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "MAL_SM.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "MAL_SM.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "MAL_SM.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "60",
+                  "String": "MAL_SM.comp_05_legendary_OhmIGot",
+                  "Legendary": "Ohm I Got"
+                },
+                {
+                  "ID": "63",
+                  "String": "MAL_SM.comp_05_legendary_PlasmaCoil",
+                  "Legendary": "Plasma Coil"
+                },
+                {
+                  "ID": "83",
+                  "String": "MAL_SM.comp_05_legendary_Firework",
+                  "Legendary": "Matador's Match"
+                }
+            ]
+        },
+        "Sniper Rifle": {
+            "Type ID": "25",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "MAL_SR.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "MAL_SR.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "MAL_SR.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "MAL_SR.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "59",
+                  "String": "MAL_SR.comp_05_legendary_complex_root",
+                  "Legendary": "Complex Root"
+                },
+                {
+                  "ID": "61",
+                  "String": "MAL_SR.comp_05_legendary_katagawa",
+                  "Legendary": "Katagawa's Revenge"
+                },
+                {
+                  "ID": "80",
+                  "String": "MAL_SR.comp_05_legendary_asher",
+                  "Legendary": "Asher's Rise"
+                }
+            ]
+        }
+    },
+    "Order": {
+        "Assault Rifle": {
+            "Type ID": "15",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "ORD_AR.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "ORD_AR.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "ORD_AR.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "ORD_AR.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "75",
+                  "String": "ORD_AR.comp_05_legendary_GMR",
+                  "Legendary": "G.M.R."
+                },
+                {
+                  "ID": "76",
+                  "String": "ORD_AR.comp_05_legendary_Goalkeeper",
+                  "Legendary": "Goalkeeper"
+                }
+            ]
+        },
+        "Pistol": {
+            "Type ID": "4",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "ORD_PS.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "ORD_PS.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "ORD_PS.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "ORD_PS.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "53",
+                  "String": "ORD_PS.comp_05_legendary_RocketReload",
+                  "Legendary": "Lucky Clover"
+                },
+                {
+                  "ID": "76",
+                  "String": "ORD_PS.comp_05_legendary_Bully",
+                  "Legendary": "Bully"
+                },
+                {
+                  "ID": "80",
+                  "String": "ORD_PS.comp_05_legendary_NoisyCricket",
+                  "Legendary": "Noisy Cricket"
+                }
+            ]
+        },
+        "Sniper Rifle": {
+            "Type ID": "26",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "ORD_SR.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "ORD_SR.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "ORD_SR.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "ORD_SR.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "1",
+                  "String": "ORD_SR.comp_05_legendary_Fisheye",
+                  "Legendary": "Fisheye"
+                },
+                {
+                  "ID": "76",
+                  "String": "ORD_SR.comp_05_legendary_symmetry",
+                  "Legendary": "Symmetry"
+                }
+            ]
+        }
+    },
+    "Ripper": {
+        "Shotgun": {
+            "Type ID": "7",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "BOR_SG.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "BOR_SG.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "BOR_SG.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "BOR_SG.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "19",
+                  "String": "BOR_SG.comp_05_legendary_GoldenGod",
+                  "Legendary": "Golden God"
+                },
+                {
+                  "ID": "20",
+                  "String": "BOR_SG.comp_05_legendary_Madame_Goremaster",
+                  "Legendary": "Goremaster"
+                },
+                {
+                  "ID": "100",
+                  "String": "BOR_SG.comp_05_legendary_convergence",
+                  "Legendary": "Convergence"
+                }
+            ]
+        },
+        "SMG": {
+            "Type ID": "19",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "BOR_SM.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "BOR_SM.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "BOR_SM.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "BOR_SM.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "1",
+                  "String": "BOR_SM.comp_05_legendary_prince",
+                  "Legendary": "Prince Harming"
+                },
+                {
+                  "ID": "19",
+                  "String": "BOR_SM.comp_05_legendary_hellfire",
+                  "Legendary": "Hellfire"
+                }
+            ]
+        },
+        "Sniper Rifle": {
+            "Type ID": "23",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "BOR_SR.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "BOR_SR.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "BOR_SR.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "BOR_SR.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "1",
+                  "String": "BOR_SR.comp_05_legendary_stray",
+                  "Legendary": "Stray"
+                },
+                {
+                  "ID": "19",
+                  "String": "BOR_SR.comp_05_legendary_Vamoose",
+                  "Legendary": "Vamoose"
+                }
+            ]
+        }
+    },
+    "Tediore": {
+        "Assault Rifle": {
+            "Type ID": "14",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "TED_AR.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "TED_AR.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "TED_AR.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "TED_AR.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "35",
+                  "String": "TED_AR.comp_05_legendary_Chuck",
+                  "Legendary": "Chuck"
+                },
+                {
+                  "ID": "36",
+                  "String": "TED_AR.comp_05_legendary_DividedFocus",
+                  "Legendary": "Divided Focus"
+                },
+                {
+                  "ID": "77",
+                  "String": "TED_AR.comp_05_legendary_murder",
+                  "Legendary": "Murmur"
+                }
+            ]
+        },
+        "Pistol": {
+            "Type ID": "5",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "TED_PS.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "TED_PS.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "TED_PS.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "TED_PS.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "1",
+                  "String": "TED_PS.comp_05_legendary_Sideshow",
+                  "Legendary": "Sideshow"
+                },
+                {
+                  "ID": "60",
+                  "String": "TED_PS.comp_05_legendary_ATLien",
+                  "Legendary": "Budget Deity"
+                },
+                {
+                  "ID": "66",
+                  "String": "TED_PS.comp_05_legendary_RubysGrasp",
+                  "Legendary": "Ruby's Grasp"
+                }
+            ]
+        },
+        "Shotgun": {
+            "Type ID": "11",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "TED_SG.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "TED_SG.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "TED_SG.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "TED_SG.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "76",
+                  "String": "TED_SG.comp_05_legendary_anarchy",
+                  "Legendary": "Anarchy"
+                },
+                {
+                  "ID": "78",
+                  "String": "TED_SG.comp_05_legendary_commBD",
+                  "Legendary": "Forsaken Chaos"
+                },
+                {
+                  "ID": "80",
+                  "String": "TED_SG.comp_05_legendary_HeavyTurret",
+                  "Legendary": "Husky Friend"
+                }
+            ]
+        }
+    },
+    "Torgue": {
+        "Assault Rifle": {
+            "Type ID": "17",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "TOR_AR.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "TOR_AR.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "TOR_AR.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "TOR_AR.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "1",
+                  "String": "TOR_AR.comp_05_legendary_Bugbear",
+                  "Legendary": "Bugbear"
+                },
+                {
+                  "ID": "56",
+                  "String": "TOR_AR.comp_05_legendary_coldshoulder",
+                  "Legendary": "Cold Shoulder"
+                },
+                {
+                  "ID": "78",
+                  "String": "TOR_AR.comp_05_legendary_PotatoThrower",
+                  "Legendary": "Potato Thrower IV"
+                }
+            ]
+        },
+        "Pistol": {
+            "Type ID": "6",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "TOR_PS.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "TOR_PS.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "TOR_PS.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "TOR_PS.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "1",
+                  "String": "TOR_PS.comp_05_legendary_Roach",
+                  "Legendary": "Roach"
+                },
+                {
+                  "ID": "53",
+                  "String": "TOR_PS.comp_05_legendary_QueensRest",
+                  "Legendary": "Queen's Rest"
+                }
+            ]
+        },
+        "Shotgun": {
+            "Type ID": "12",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "TOR_SG.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "TOR_SG.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "TOR_SG.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "TOR_SG.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "1",
+                  "String": "TOR_SG.comp_05_legendary_Linebacker",
+                  "Legendary": "Linebacker"
+                },
+                {
+                  "ID": "57",
+                  "String": "TOR_SG.comp_05_legendary_LeadBalloon",
+                  "Legendary": "Lead Balloon"
+                }
+            ]
+        }
+    },
+    "Vladof": {
+        "Assault Rifle": {
+            "Type ID": "18",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "VLA_AR.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "VLA_AR.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "VLA_AR.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "VLA_AR.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "63",
+                  "String": "VLA_AR.comp_05_legendary_Lucian",
+                  "Legendary": "Lucian's Flank"
+                },
+                {
+                  "ID": "65",
+                  "String": "VLA_AR.comp_05_legendary_WomboCombo",
+                  "Legendary": "Wombo Combo"
+                },
+                {
+                  "ID": "88",
+                  "String": "VLA_AR.comp_05_legendary_Dual Damage",
+                  "Legendary": "Aegon's Dream"
+                },
+                {
+                  "ID": "93",
+                  "String": "VLA_AR.comp_05_legendary_WF",
+                  "Legendary": "Whiskey Foxtrot"
+                }
+            ]
+        },
+        "SMG": {
+            "Type ID": "22",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "VLA_SM.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "VLA_SM.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "VLA_SM.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "VLA_SM.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "1",
+                  "String": "VLA_SM.comp_05_legendary_Onslaught",
+                  "Legendary": "Onslaught"
+                },
+                {
+                  "ID": "67",
+                  "String": "VLA_SM.comp_05_legendary_KaoSon",
+                  "Legendary": "Kaoson"
+                },
+                {
+                  "ID": "88",
+                  "String": "VLA_SM.comp_05_legendary_BeeGun",
+                  "Legendary": "Birt's Bees"
+                }
+            ]
+        },
+        "Sniper Rifle": {
+            "Type ID": "16",
+            "Rarity": [
+                {
+                  "ID": "95",
+                  "String": "VLA_SR.comp_01_common",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "96",
+                  "String": "VLA_SR.comp_02_uncommon",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "97",
+                  "String": "VLA_SR.comp_03_rare",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "98",
+                  "String": "VLA_SR.comp_04_epic",
+                  "Legendary": ""
+                },
+                {
+                  "ID": "66",
+                  "String": "VLA_SR.comp_05_legendary_Finnty",
+                  "Legendary": "Finnity XXX-L"
+                },
+                {
+                  "ID": "67",
+                  "String": "VLA_SR.comp_05_legendary_StopGap",
+                  "Legendary": "Stop Gap"
+                },
+                {
+                  "ID": "69",
+                  "String": "VLA_SR.comp_05_legendary_CrowdSourced",
+                  "Legendary": "Midnight Defiance"
+                }
+            ]
+        }
+    }
+}
