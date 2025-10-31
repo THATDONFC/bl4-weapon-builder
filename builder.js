@@ -1,20 +1,22 @@
-// Import your weapon data
-// import WEAPON_DATA from './weaponData.json';
-
 let WEAPON_DATA = {};
+let RARITY_DATA = {};
 
-fetch('./weaponData.json')
-  .then(response => response.json())
-  .then(data => {
-    WEAPON_DATA = data;
+Promise.all([
+  fetch('./weaponData.json').then(response => response.json()),
+  fetch('./rarity.json').then(response => response.json())
+])
+  .then(([weaponData, rarityData]) => {
+    WEAPON_DATA = weaponData;
+    RARITY_DATA = rarityData;
     init();
   })
-  .catch(error => console.error('Error loading weapon data:', error));
+  .catch(error => console.error('Error loading data:', error));
 
 // State
 let selectedManufacturer = '';
 let selectedWeaponType = '';
 let selectedParts = {};
+let selectedRarity = null;
 let outputMode = 'strings';
 
 // DOM Elements
@@ -63,6 +65,7 @@ function handleManufacturerChange(e) {
   selectedManufacturer = e.target.value;
   selectedWeaponType = '';
   selectedParts = {};
+  selectedRarity = null;
   
   weaponTypeSelect.innerHTML = '<option value="">Select Weapon Type</option>';
   weaponTypeSelect.disabled = !selectedManufacturer;
@@ -90,14 +93,197 @@ function populateWeaponTypes() {
 function handleWeaponTypeChange(e) {
   selectedWeaponType = e.target.value;
   selectedParts = {};
+  selectedRarity = null;
   
   if (selectedWeaponType) {
     populateParts();
+    populateRarity();
     partsContainer.classList.remove('hidden');
   } else {
     partsContainer.classList.add('hidden');
     outputContainer.classList.add('hidden');
   }
+}
+
+// Populate rarity selection
+function populateRarity() {
+  const rarityData = RARITY_DATA[selectedManufacturer]?.[selectedWeaponType];
+  if (!rarityData) return;
+  
+  const rarities = rarityData.Rarity;
+  
+  // Remove existing rarity section if it exists
+  const existingRaritySection = document.getElementById('rarity-section');
+  if (existingRaritySection) {
+    existingRaritySection.remove();
+  }
+  
+  // Create rarity section
+  const raritySection = document.createElement('div');
+  raritySection.className = 'col-span-full bg-gray-900 border-2 border-orange-400 rounded p-4 mb-4';
+  raritySection.id = 'rarity-section';
+  
+  const rarityTitle = document.createElement('h4');
+  rarityTitle.className = 'text-orange-400 font-bold mb-3';
+  rarityTitle.textContent = 'Weapon Rarity';
+  raritySection.appendChild(rarityTitle);
+  
+  const rarityGrid = document.createElement('div');
+  rarityGrid.className = 'grid grid-cols-1 md:grid-cols-2 gap-4';
+  
+  // Rarity dropdown
+  const rarityDiv = document.createElement('div');
+  const rarityLabel = document.createElement('label');
+  rarityLabel.className = 'block text-orange-300 font-semibold mb-2';
+  rarityLabel.textContent = 'Rarity';
+  
+  const raritySelect = document.createElement('select');
+  raritySelect.id = 'rarity-select';
+  raritySelect.className = 'w-full bg-gray-900 border border-orange-500 text-gray-300 rounded p-2 text-sm focus:outline-none focus:border-orange-400';
+  
+  const defaultRarityOption = document.createElement('option');
+  defaultRarityOption.value = '';
+  defaultRarityOption.textContent = 'Select Rarity';
+  raritySelect.appendChild(defaultRarityOption);
+  
+  // Group rarities by type
+  const regularRarities = [];
+  const legendaryRarities = [];
+  
+  rarities.forEach(rarity => {
+    if (rarity.Legendary) {
+      legendaryRarities.push(rarity);
+    } else {
+      regularRarities.push(rarity);
+    }
+  });
+  
+  // Add regular rarities
+  regularRarities.forEach(rarity => {
+    const option = document.createElement('option');
+    option.value = rarity.ID;
+    option.dataset.string = rarity.String;
+    option.dataset.id = rarity.ID;
+    option.dataset.isLegendary = 'false';
+    
+    const rarityName = getRarityName(rarity.String);
+    option.textContent = rarityName;
+    raritySelect.appendChild(option);
+  });
+  
+  // Add legendary option
+  if (legendaryRarities.length > 0) {
+    const legendaryOption = document.createElement('option');
+    legendaryOption.value = 'legendary';
+    legendaryOption.dataset.isLegendary = 'true';
+    legendaryOption.textContent = 'Legendary';
+    raritySelect.appendChild(legendaryOption);
+  }
+  
+  raritySelect.addEventListener('change', handleRarityChange);
+  
+  rarityDiv.appendChild(rarityLabel);
+  rarityDiv.appendChild(raritySelect);
+  rarityGrid.appendChild(rarityDiv);
+  
+  // Legendary dropdown
+  const legendaryDiv = document.createElement('div');
+  legendaryDiv.id = 'legendary-container';
+  legendaryDiv.className = 'hidden';
+  
+  const legendaryLabel = document.createElement('label');
+  legendaryLabel.className = 'block text-orange-300 font-semibold mb-2';
+  legendaryLabel.textContent = 'Legendary Type';
+  
+  const legendarySelect = document.createElement('select');
+  legendarySelect.id = 'legendary-select';
+  legendarySelect.className = 'w-full bg-gray-900 border border-orange-500 text-gray-300 rounded p-2 text-sm focus:outline-none focus:border-orange-400';
+  
+  const defaultLegendaryOption = document.createElement('option');
+  defaultLegendaryOption.value = '';
+  defaultLegendaryOption.textContent = 'Select Legendary';
+  legendarySelect.appendChild(defaultLegendaryOption);
+  
+  legendaryRarities.forEach(legendary => {
+    const option = document.createElement('option');
+    option.value = legendary.ID;
+    option.dataset.string = legendary.String;
+    option.dataset.id = legendary.ID;
+    option.textContent = legendary.Legendary;
+    legendarySelect.appendChild(option);
+  });
+  
+  legendarySelect.addEventListener('change', handleLegendaryChange);
+  
+  legendaryDiv.appendChild(legendaryLabel);
+  legendaryDiv.appendChild(legendarySelect);
+  rarityGrid.appendChild(legendaryDiv);
+  
+  raritySection.appendChild(rarityGrid);
+  partsGrid.prepend(raritySection);
+}
+
+// Get rarity name from string
+function getRarityName(rarityString) {
+  const parts = rarityString.split('_');
+  const rarityNames = {
+    'common': 'Common',
+    'uncommon': 'Uncommon',
+    'rare': 'Rare',
+    'epic': 'Epic'
+  };
+  
+  for (let part of parts) {
+    if (rarityNames[part]) {
+      return rarityNames[part];
+    }
+  }
+  return 'Unknown';
+}
+
+// Handle rarity change
+function handleRarityChange(e) {
+  const selectedOption = e.target.options[e.target.selectedIndex];
+  const isLegendary = selectedOption.dataset.isLegendary === 'true';
+  
+  const legendaryContainer = document.getElementById('legendary-container');
+  const legendarySelect = document.getElementById('legendary-select');
+  
+  if (isLegendary) {
+    // Show legendary dropdown
+    legendaryContainer.classList.remove('hidden');
+    selectedRarity = null;
+    legendarySelect.value = '';
+  } else if (selectedOption.value) {
+    // Regular rarity selected
+    selectedRarity = {
+      ID: selectedOption.dataset.id,
+      String: selectedOption.dataset.string
+    };
+    legendaryContainer.classList.add('hidden');
+  } else {
+    // No rarity selected
+    selectedRarity = null;
+    legendaryContainer.classList.add('hidden');
+  }
+  
+  updateOutput();
+}
+
+// Handle legendary change
+function handleLegendaryChange(e) {
+  const selectedOption = e.target.options[e.target.selectedIndex];
+  
+  if (selectedOption.value) {
+    selectedRarity = {
+      ID: selectedOption.dataset.id,
+      String: selectedOption.dataset.string
+    };
+  } else {
+    selectedRarity = null;
+  }
+  
+  updateOutput();
 }
 
 // Populate parts
@@ -167,7 +353,7 @@ function populateParts() {
       partDiv.appendChild(label);
       partDiv.appendChild(selectsContainer);
     } else {
-      // Single selection dropdown (original behavior)
+      // Single selection dropdown
       const select = document.createElement('select');
       select.className = 'w-full bg-gray-900 border border-orange-500 text-gray-300 rounded p-2 text-sm focus:outline-none focus:border-orange-400';
       select.dataset.partType = partType;
@@ -254,7 +440,7 @@ function handlePartSelection(e, partType, partsList, index = null) {
 
 // Update output display
 function updateOutput() {
-  if (Object.keys(selectedParts).length > 0) {
+  if (Object.keys(selectedParts).length > 0 || selectedRarity) {
     outputContainer.classList.remove('hidden');
     const output = generateOutput();
     outputDisplay.textContent = formatOutput(output);
@@ -263,41 +449,91 @@ function updateOutput() {
   }
 }
 
+// Get Type ID from rarity data
+function getTypeID() {
+  const rarityData = RARITY_DATA[selectedManufacturer]?.[selectedWeaponType];
+  return rarityData?.['Type ID'] || null;
+}
+
+// Generate random int for base
+function getRandomInt(min, max) {
+  const minCeiled = Math.ceil(min);
+  const maxFloored = Math.floor(max);
+  return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
+}
+
+// Generate base which includes level and other mandatory values
+function generateBase() {
+  const base = ", 0, 1, 50| 2, " + getRandomInt(1,9999) + "||";
+  return base;
+}
+
 // Generate output array
 function generateOutput() {
   const output = [];
   const multiSelectTypes = ['Body Accessory', 'Barrel Accessory', 'Scope Accessory'];
   
+  // Add Type ID first
+  const typeID = getTypeID();
+  if (typeID) {
+    output.push({ type: 'typeId', value: typeID });
+  }
+  
+  // Add rarity
+  if (selectedRarity) {
+    if (outputMode === 'strings') {
+      output.push({ type: 'rarity', value: selectedRarity.String });
+    } else {
+      output.push({ type: 'rarity', value: selectedRarity.ID });
+    }
+  }
+  
+  // Add parts
   Object.entries(selectedParts).forEach(([partType, partData]) => {
     if (multiSelectTypes.includes(partType)) {
       // Handle multi-select parts (arrays)
       partData.forEach(part => {
         if (part) {
           if (outputMode === 'strings') {
-            output.push(part.String);
+            output.push({ type: 'part', value: part.String });
           } else {
-            output.push(part.ID);
+            output.push({ type: 'part', value: part.ID });
           }
         }
       });
     } else {
       // Handle single-select parts (objects)
       if (outputMode === 'strings') {
-        output.push(partData.String);
+        output.push({ type: 'part', value: partData.String });
       } else {
-        output.push(partData.ID);
+        output.push({ type: 'part', value: partData.ID });
       }
     }
   });
+  
   return output;
 }
 
 // Format output based on mode
 function formatOutput(output) {
   if (outputMode === 'strings') {
-    return output.map(str => `"${str}"`).join(' ');
+    return output.map(item => {
+      if (item.type === 'typeId') {
+        return `${item.value}` + generateBase();
+      } else if (item.type === 'rarity') {
+        return `"${item.value}"`;
+      } else {
+        return `"${item.value}"`;
+      }
+    }).join(' ');
   } else {
-    return output.map(id => `{${id}}`).join(' ');
+    return output.map(item => {
+      if (item.type === 'typeId') {
+        return `${item.value}` + generateBase();
+      } else {
+        return `{${item.value}}`;
+      }
+    }).join(' ');
   }
 }
 
@@ -357,6 +593,7 @@ function resetBuilder() {
   selectedManufacturer = '';
   selectedWeaponType = '';
   selectedParts = {};
+  selectedRarity = null;
   
   manufacturerSelect.value = '';
   weaponTypeSelect.value = '';
