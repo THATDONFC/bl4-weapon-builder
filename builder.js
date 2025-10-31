@@ -17,6 +17,7 @@ let selectedManufacturer = '';
 let selectedWeaponType = '';
 let selectedParts = {};
 let selectedRarity = null;
+let baseValue = '';
 let outputMode = 'strings';
 
 // DOM Elements
@@ -266,7 +267,7 @@ function handleRarityChange(e) {
     selectedRarity = null;
     legendaryContainer.classList.add('hidden');
   }
-  
+  generateBase();
   updateOutput();
 }
 
@@ -283,6 +284,7 @@ function handleLegendaryChange(e) {
     selectedRarity = null;
   }
   
+  generateBase();
   updateOutput();
 }
 
@@ -299,6 +301,7 @@ function populateParts() {
     }
     partsByType[type].push(part);
   });
+  console.log(partsByType);
   
   // Clear parts grid
   partsGrid.innerHTML = '';
@@ -435,6 +438,7 @@ function handlePartSelection(e, partType, partsList, index = null) {
     }
   }
   
+  // generateBase();
   updateOutput();
 }
 
@@ -443,7 +447,7 @@ function updateOutput() {
   if (Object.keys(selectedParts).length > 0 || selectedRarity) {
     outputContainer.classList.remove('hidden');
     const output = generateOutput();
-    outputDisplay.textContent = formatOutput(output);
+    outputDisplay.textContent = formatOutput(output) + "|";
   } else {
     outputContainer.classList.add('hidden');
   }
@@ -459,13 +463,13 @@ function getTypeID() {
 function getRandomInt(min, max) {
   const minCeiled = Math.ceil(min);
   const maxFloored = Math.floor(max);
-  return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
+  return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
 }
 
 // Generate base which includes level and other mandatory values
 function generateBase() {
   const base = ", 0, 1, 50| 2, " + getRandomInt(1,9999) + "||";
-  return base;
+  baseValue = base;
 }
 
 // Generate output array
@@ -476,9 +480,12 @@ function generateOutput() {
   // Add Type ID first
   const typeID = getTypeID();
   if (typeID) {
-    output.push({ type: 'typeId', value: typeID });
+    output.push({ type: 'typeId', value: typeID });    
   }
   
+  // Add base
+  output.push({ type: 'base', value: baseValue });
+
   // Add rarity
   if (selectedRarity) {
     if (outputMode === 'strings') {
@@ -519,7 +526,9 @@ function formatOutput(output) {
   if (outputMode === 'strings') {
     return output.map(item => {
       if (item.type === 'typeId') {
-        return `${item.value}` + generateBase();
+        return `${item.value}`;
+      } else if (item.type === 'base') {
+        return `${item.value}`;
       } else if (item.type === 'rarity') {
         return `"${item.value}"`;
       } else {
@@ -529,7 +538,9 @@ function formatOutput(output) {
   } else {
     return output.map(item => {
       if (item.type === 'typeId') {
-        return `${item.value}` + generateBase();
+        return `${item.value}`;
+      } else if (item.type === 'base') {
+        return `${item.value}`;
       } else {
         return `{${item.value}}`;
       }
