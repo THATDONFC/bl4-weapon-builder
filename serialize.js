@@ -20,7 +20,7 @@ async function callSerialize() {
   const raw = outputCode();
   const deserialized = normalizeDeserialized(raw);
 
-  serializedOutput.textContent = "";
+  serializedOutput.textContent = "Please wait...";
 
   if (!deserialized) {
     serializedOutput.textContent = "No deserialized string available.";

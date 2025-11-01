@@ -11,56 +11,56 @@
     }
   </style>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-orange-900 via-gray-900 to-black p-6">
+<body class="min-h-screen bg-gradient-to-br from-orange-900 via-gray-900 to-black p-4">
   <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-8">
+    <div class="text-center mb-4">
       <h1 class="text-5xl font-bold text-orange-400 mb-2 glow">BORDERLANDS 4</h1>
       <h2 class="text-2xl text-gray-300">Weapon Builder</h2>
     </div>
 
-    <div class="space-y-6">
-      <div class="bg-gray-800 border-2 border-orange-500 rounded-lg p-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="space-y-4">
+      <div class="bg-gray-800 border-2 border-orange-500 rounded-lg p-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label class="block text-orange-400 font-bold mb-2">Manufacturer</label>
-            <select id="manufacturer-select" class="w-full bg-gray-900 border-2 border-orange-500 text-gray-300 rounded p-3 focus:outline-none focus:border-orange-400">
+            <select id="manufacturer-select" class="w-full bg-gray-900 border-2 border-orange-500 text-gray-300 rounded p-2 focus:outline-none focus:border-orange-400">
               <option value="">Select Manufacturer</option>
             </select>
           </div>
 
           <div>
             <label class="block text-orange-400 font-bold mb-2">Weapon Type</label>
-            <select id="weapon-type-select" disabled class="w-full bg-gray-900 border-2 border-orange-500 text-gray-300 rounded p-3 focus:outline-none focus:border-orange-400 disabled:opacity-50 disabled:cursor-not-allowed">
+            <select id="weapon-type-select" disabled class="w-full bg-gray-900 border-2 border-orange-500 text-gray-300 rounded p-2 focus:outline-none focus:border-orange-400 disabled:opacity-50 disabled:cursor-not-allowed">
               <option value="">Select Weapon Type</option>
             </select>
           </div>
         </div>
       </div>
 
-      <div id="parts-container" class="bg-gray-800 border-2 border-orange-500 rounded-lg p-6 hidden">
-        <h3 class="text-xl text-orange-400 font-bold mb-4">Select Parts</h3>
-        <div id="parts-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      <div id="parts-container" class="bg-gray-800 border-2 border-orange-500 rounded-lg p-4 hidden">
+        <h3 class="text-xl text-orange-400 font-bold mb-2">Select Parts</h3>
+        <div id="parts-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"></div>
       </div>
 
-      <div id="output-container" class="bg-gray-800 border-2 border-orange-500 rounded-lg p-6 hidden">
-        <div class="flex justify-between items-center mb-4">
+      <div id="output-container" class="bg-gray-800 border-2 border-orange-500 rounded-lg p-4 hidden">
+        <div class="flex justify-between items-center mb-2">
           <h3 class="text-xl text-orange-400 font-bold">Output</h3>
           <div class="flex gap-2">
-            <button id="strings-btn" class="px-4 py-2 rounded font-semibold transition bg-orange-500 text-white">
+            <button id="strings-btn" class="px-4 py-2 rounded font-semibold transition bg-gray-700 text-gray-300 hover:bg-gray-600">
               Strings
             </button>
-            <button id="ids-btn" class="px-4 py-2 rounded font-semibold transition bg-gray-700 text-gray-300 hover:bg-gray-600">
+            <button id="ids-btn" class="px-4 py-2 rounded font-semibold transition bg-orange-500 text-white">
               IDs
             </button>
           </div>
         </div>
         
-        <pre id="output-display" class="bg-gray-900 border border-orange-500 rounded p-4 text-gray-300 overflow-x-auto mb-4"></pre>
+        <pre id="output-display" class="bg-gray-900 border border-orange-500 rounded p-2 text-gray-300 overflow-x-auto mb-2"></pre>
         
-        <div class="flex justify-between items-center mb-4">
+        <div class="flex justify-between items-center mb-2">
           <h3 class="text-xl text-orange-400 font-bold">Serialized Output</h3>
         </div>
-        <pre id="serialized-output" class="bg-gray-900 border border-orange-500 rounded p-4 text-gray-300 overflow-x-auto mb-4">Click the button to convert</pre>
+        <pre id="serialized-output" class="bg-gray-900 border border-orange-500 rounded p-2 text-gray-300 overflow-x-auto mb-2">Click the button to convert</pre>
         <div class="row" style="justify-content:space-between;align-items:center;display:flex">
           <div class="flex gap-3">
             <button id="convert-serial-btn" class="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition">

@@ -18,7 +18,7 @@ let selectedWeaponType = '';
 let selectedParts = {};
 let selectedRarity = null;
 let baseValue = '';
-let outputMode = 'strings';
+let outputMode = 'ids';
 
 // DOM Elements
 const manufacturerSelect = document.getElementById('manufacturer-select');
@@ -124,10 +124,11 @@ function populateRarity() {
   raritySection.className = 'col-span-full bg-gray-900 border-2 border-orange-400 rounded p-4 mb-4';
   raritySection.id = 'rarity-section';
   
-  const rarityTitle = document.createElement('h4');
-  rarityTitle.className = 'text-orange-400 font-bold mb-3';
-  rarityTitle.textContent = 'Weapon Rarity';
-  raritySection.appendChild(rarityTitle);
+  // Commented out to remove 'Weapon Rarity' title
+  // const rarityTitle = document.createElement('h4');
+  // rarityTitle.className = 'text-orange-400 font-bold mb-3';
+  // rarityTitle.textContent = 'Weapon Rarity';
+  // raritySection.appendChild(rarityTitle);
   
   const rarityGrid = document.createElement('div');
   rarityGrid.className = 'grid grid-cols-1 md:grid-cols-2 gap-4';
@@ -136,7 +137,7 @@ function populateRarity() {
   const rarityDiv = document.createElement('div');
   const rarityLabel = document.createElement('label');
   rarityLabel.className = 'block text-orange-300 font-semibold mb-2';
-  rarityLabel.textContent = 'Rarity';
+  rarityLabel.textContent = 'Weapon Rarity';
   
   const raritySelect = document.createElement('select');
   raritySelect.id = 'rarity-select';
@@ -468,7 +469,7 @@ function getRandomInt(min, max) {
 
 // Generate base which includes level and other mandatory values
 function generateBase() {
-  const base = ", 0, 1, 50| 2, " + getRandomInt(1,9999) + "||";
+  const base = "0, 1, 50| 2, " + getRandomInt(1,9999) + "||";
   baseValue = base;
 }
 
@@ -526,7 +527,7 @@ function formatOutput(output) {
   if (outputMode === 'strings') {
     return output.map(item => {
       if (item.type === 'typeId') {
-        return `${item.value}`;
+        return `${item.value}` + ',';
       } else if (item.type === 'base') {
         return `${item.value}`;
       } else if (item.type === 'rarity') {
@@ -538,7 +539,7 @@ function formatOutput(output) {
   } else {
     return output.map(item => {
       if (item.type === 'typeId') {
-        return `${item.value}`;
+        return `${item.value}` + ',';
       } else if (item.type === 'base') {
         return `${item.value}`;
       } else {
@@ -552,12 +553,12 @@ function formatOutput(output) {
 function setOutputMode(mode) {
   outputMode = mode;
   
-  if (mode === 'strings') {
-    stringsBtn.className = 'px-4 py-2 rounded font-semibold transition bg-orange-500 text-white';
-    idsBtn.className = 'px-4 py-2 rounded font-semibold transition bg-gray-700 text-gray-300 hover:bg-gray-600';
-  } else {
+  if (mode === 'ids') {
     idsBtn.className = 'px-4 py-2 rounded font-semibold transition bg-orange-500 text-white';
     stringsBtn.className = 'px-4 py-2 rounded font-semibold transition bg-gray-700 text-gray-300 hover:bg-gray-600';
+  } else {
+    stringsBtn.className = 'px-4 py-2 rounded font-semibold transition bg-orange-500 text-white';
+    idsBtn.className = 'px-4 py-2 rounded font-semibold transition bg-gray-700 text-gray-300 hover:bg-gray-600';
   }
   
   updateOutput();
