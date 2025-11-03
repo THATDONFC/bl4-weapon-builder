@@ -1,9 +1,9 @@
-
 const API_URL = "https://borderlands4-deserializer.nicnl.com/api/v1/reserialize";
 const copySerialBtn = document.getElementById('copy-serial-btn');
 const convertBtn = document.getElementById('convert-serial-btn');
 // const outputDisplay = document.getElementById('output-display');
 const serializedOutput = document.getElementById('serialized-output');
+const storeSerialBtn = document.getElementById('store-serial-btn');
 
 function outputCode() {
   const el = document.getElementById('output-display');
@@ -30,6 +30,8 @@ async function callSerialize() {
   convertBtn && (convertBtn.disabled = true,
   convertBtn.textContent = "Working…");
 
+  storeSerialBtn && (storeSerialBtn.disabled = true);
+
   try {
     const res = await fetch(API_URL, {
       method: "POST",
@@ -50,6 +52,7 @@ async function callSerialize() {
     serializedOutput.textContent = "Error: " + (err && err.message ? err.message : err);
   } finally {
     if (convertBtn) {
+      storeSerialBtn.disabled = false;
       convertBtn.disabled = false;
       convertBtn.textContent = "Convert Serial";
     }

@@ -60,8 +60,9 @@
         <div class="flex justify-between items-center mb-2">
           <h3 class="text-xl text-orange-400 font-bold">Serialized Output</h3>
         </div>
+
         <pre id="serialized-output" class="bg-gray-900 border border-orange-500 rounded p-2 text-gray-300 overflow-x-auto mb-2">Click the button to convert</pre>
-        <div class="row" style="justify-content:space-between;align-items:center;display:flex">
+        <div class="row mb-4" style="justify-content:space-between;align-items:center;display:flex">
           <div class="flex gap-3">
             <button id="convert-serial-btn" class="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition">
               Convert Serial
@@ -72,6 +73,13 @@
               </svg>
               Copy Serial
             </button>
+            <!--- Backpack Creator Toggle -->
+            <label class="inline-flex items-center cursor-pointer">
+              <input id="enable-backpack-toggle" type="checkbox" value="" class="sr-only peer">
+              <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
+              <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Enable Backpack Creator</span>
+            </label>
+
           </div>
           <div class="flex gap-3">
             <button id="copy-btn" class="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded transition">
@@ -91,11 +99,57 @@
             </button>
           </div>
         </div>
+
+        <div id="backpack-container" class="justify-between items-center mb-2 hidden">
+          <div class="row mb-3" style="justify-content:space-between;align-items:center;display:flex">
+            <div class="flex gap-3">
+              <button id="store-serial-btn" class="flex items-center gap-2 bg-orange-700 hover:bg-orange-800 text-white font-bold py-2 px-4 rounded transition">
+                <svg class="w-4 h-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                  <path d="M352 128C352 110.3 337.7 96 320 96C302.3 96 288 110.3 288 128L288 288L128 288C110.3 288 96 302.3 96 320C96 337.7 110.3 352 128 352L288 352L288 512C288 529.7 302.3 544 320 544C337.7 544 352 529.7 352 512L352 352L512 352C529.7 352 544 337.7 544 320C544 302.3 529.7 288 512 288L352 288L352 128z"/>
+                </svg>
+                Store Serial
+              </button>
+              <button id="show-backpack-btn" class="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition">
+                <svg class="w-4 h-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                  <path d="M129.5 464L179.5 304L558.9 304L508.9 464L129.5 464zM320.2 512L509 512C530 512 548.6 498.4 554.8 478.3L604.8 318.3C614.5 287.4 591.4 256 559 256L179.6 256C158.6 256 140 269.6 133.8 289.7L112.2 358.4L112.2 160C112.2 151.2 119.4 144 128.2 144L266.9 144C270.4 144 273.7 145.1 276.5 147.2L314.9 176C328.7 186.4 345.6 192 362.9 192L480.2 192C489 192 496.2 199.2 496.2 208L544.2 208C544.2 172.7 515.5 144 480.2 144L362.9 144C356 144 349.2 141.8 343.7 137.6L305.3 108.8C294.2 100.5 280.8 96 266.9 96L128.2 96C92.9 96 64.2 124.7 64.2 160L64.2 448C64.2 483.3 92.9 512 128.2 512L320.2 512z"/>
+                </svg>
+                Show Backpack
+              </button>
+            </div>
+            <div class="flex gap-3">
+              <button id="clear-serials-btn" class="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition">
+                <svg class="w-4 h-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                  <path d="M576 192C576 156.7 547.3 128 512 128L205.3 128C188.3 128 172 134.7 160 146.7L9.4 297.4C3.4 303.4 0 311.5 0 320C0 328.5 3.4 336.6 9.4 342.6L160 493.3C172 505.3 188.3 512 205.3 512L512 512C547.3 512 576 483.3 576 448L576 192zM284.1 252.1C293.5 242.7 308.7 242.7 318 252.1L351.9 286L385.8 252.1C395.2 242.7 410.4 242.7 419.7 252.1C429 261.5 429.1 276.7 419.7 286L385.8 319.9L419.7 353.8C429.1 363.2 429.1 378.4 419.7 387.7C410.3 397 395.1 397.1 385.8 387.7L351.9 353.8L318 387.7C308.6 397.1 293.4 397.1 284.1 387.7C274.8 378.3 274.7 363.1 284.1 353.8L318 319.9L284.1 286C274.7 276.6 274.7 261.4 284.1 252.1z"/>
+                </svg>
+                Clear Serials
+              </button>
+              <!-- <button id="generate-backpack-btn" class="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition">
+                <svg class="w-4 h-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                  <path d="M160 144C151.2 144 144 151.2 144 160L144 480C144 488.8 151.2 496 160 496L480 496C488.8 496 496 488.8 496 480L496 237.3C496 233.1 494.3 229 491.3 226L416 150.6L416 240C416 257.7 401.7 272 384 272L224 272C206.3 272 192 257.7 192 240L192 144L160 144zM240 144L240 224L368 224L368 144L240 144zM96 160C96 124.7 124.7 96 160 96L402.7 96C419.7 96 436 102.7 448 114.7L525.3 192C537.3 204 544 220.3 544 237.3L544 480C544 515.3 515.3 544 480 544L160 544C124.7 544 96 515.3 96 480L96 160zM256 384C256 348.7 284.7 320 320 320C355.3 320 384 348.7 384 384C384 419.3 355.3 448 320 448C284.7 448 256 419.3 256 384z"/>
+                </svg>
+                Generate Backpack
+              </button> -->
+              <!-- <button id="clear-backpack-btn" class="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition">
+                <svg class="w-4 h-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                  <path d="M232.7 69.9L224 96L128 96C110.3 96 96 110.3 96 128C96 145.7 110.3 160 128 160L512 160C529.7 160 544 145.7 544 128C544 110.3 529.7 96 512 96L416 96L407.3 69.9C402.9 56.8 390.7 48 376.9 48L263.1 48C249.3 48 237.1 56.8 232.7 69.9zM512 208L128 208L149.1 531.1C150.7 556.4 171.7 576 197 576L443 576C468.3 576 489.3 556.4 490.9 531.1L512 208z"/>
+                </svg>
+                Clear Backpack
+              </button> -->
+            </div>
+          </div>
+        
+          <div class="flex gap-3 justify-between items-center">
+              <p class="text-l text-orange-300 font-bold">Backpack Status:</p>
+            <pre id="backpack-status" class="bg-gray-900 border border-orange-500 rounded p-2 text-gray-300 overflow-x-auto grow">...</pre>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
 
   <script type="module" src="builder.js"></script>
   <script type="module" src="serialize.js"></script>
+  <script type="module" src="toBackpack.js"></script>
 </body>
 </html>
