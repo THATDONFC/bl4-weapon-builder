@@ -10,6 +10,8 @@ const backpackContainer = document.getElementById('backpack-container');
 const backpackCreateToggle = document.getElementById('enable-backpack-toggle');
 const backpackStatusDisplay = document.getElementById('backpack-status');
 
+// TODO: Add functionality to download the backpack in a backpack.txt file using the existing download button
+
 // Store current serial in serials array
 function storeSerial(serial) {
   // if (serial[0] != '@') return;
