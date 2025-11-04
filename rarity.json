@@ -679,22 +679,22 @@
             "Type ID": "14",
             "Rarity": [
                 {
-                  "ID": "95",
+                  "ID": "89",
                   "String": "TED_AR.comp_01_common",
                   "Legendary": ""
                 },
                 {
-                  "ID": "96",
+                  "ID": "90",
                   "String": "TED_AR.comp_02_uncommon",
                   "Legendary": ""
                 },
                 {
-                  "ID": "97",
+                  "ID": "91",
                   "String": "TED_AR.comp_03_rare",
                   "Legendary": ""
                 },
                 {
-                  "ID": "98",
+                  "ID": "92",
                   "String": "TED_AR.comp_04_epic",
                   "Legendary": ""
                 },
