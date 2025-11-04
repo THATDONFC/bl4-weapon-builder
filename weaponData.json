@@ -7625,22 +7625,22 @@
             },
             {
                 "ID": "17",
-                "Part Type": "Manufacturer Part",
+                "Part Type": "Stat Modifier",
                 "String": "TOR_AR.part_mag_ted_thrown_01"
             },
             {
                 "ID": "18",
-                "Part Type": "Manufacturer Part",
+                "Part Type": "Stat Modifier",
                 "String": "TOR_AR.part_mag_ted_thrown_02"
             },
             {
                 "ID": "19",
-                "Part Type": "Manufacturer Part",
+                "Part Type": "Stat Modifier",
                 "String": "TOR_AR.part_mag_ted_thrown_04_cov"
             },
             {
                 "ID": "20",
-                "Part Type": "Manufacturer Part",
+                "Part Type": "Stat Modifier",
                 "String": "TOR_AR.part_mag_ted_thrown_05_bor"
             },
             {
