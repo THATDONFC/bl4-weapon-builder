@@ -355,10 +355,7 @@ function handleElement2Change(e) {
   if (selectedOption.value && selectedElements.length > 0) {
     const firstElement = selectedElements[0].name;
     const secondElement = selectedOption.value;
-    console.log(firstElement);
-    console.log(secondElement);
     const combinedKey = `${firstElement} - ${secondElement}`;
-    console.log(combinedKey);
     
     // Determine if MFR is Maliwan
     const isMaliwan = selectedManufacturer === 'Maliwan';
@@ -367,20 +364,16 @@ function handleElement2Change(e) {
     const combinedData = elementList[combinedKey];
     
     if (combinedData) {
+      if (selectedElements.length > 1) {  // Overwrite previously selected 2nd element
+        selectedElements.splice(-1,1);
+      }
       // Add the second element if one is selected
       selectedElements.push({
         name: combinedKey,
         ID: combinedData.ID,
         String: combinedData.String
       });
-      // Replace the first element with the combined element
-      // selectedElements = [{
-      //   name: combinedKey,
-      //   ID: combinedData.ID,
-      //   String: combinedData.String
-      // }];
     }
-    console.log(selectedElements);
   } else if (selectedElements.length > 0) {
     // Reset to just first element
     const element1Select = document.getElementById('element1-select');
