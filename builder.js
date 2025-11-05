@@ -1,13 +1,16 @@
 let WEAPON_DATA = {};
 let RARITY_DATA = {};
+let ELEMENT_DATA = {};
 
 Promise.all([
   fetch('./weaponData.json').then(response => response.json()),
-  fetch('./rarity.json').then(response => response.json())
+  fetch('./rarity.json').then(response => response.json()),
+  fetch('./elementData.json').then(response => response.json())
 ])
-  .then(([weaponData, rarityData]) => {
+  .then(([weaponData, rarityData, elementData]) => {
     WEAPON_DATA = weaponData;
     RARITY_DATA = rarityData;
+    ELEMENT_DATA = elementData;
     init();
   })
   .catch(error => console.error('Error loading data:', error));
@@ -17,6 +20,7 @@ let selectedManufacturer = '';
 let selectedWeaponType = '';
 let selectedParts = {};
 let selectedRarity = null;
+let selectedElements = [];
 let baseValue = '';
 let outputMode = 'ids';
 
@@ -95,10 +99,12 @@ function handleWeaponTypeChange(e) {
   selectedWeaponType = e.target.value;
   selectedParts = {};
   selectedRarity = null;
+  selectedElements = [];
   
   if (selectedWeaponType) {
     populateParts();
     populateRarity();
+    populateElements();
     partsContainer.classList.remove('hidden');
   } else {
     partsContainer.classList.add('hidden');
@@ -223,6 +229,170 @@ function populateRarity() {
   
   raritySection.appendChild(rarityGrid);
   partsGrid.prepend(raritySection);
+}
+
+// Populate element selection
+function populateElements() {
+  // Remove existing element section if it exists
+  const existingElementSection = document.getElementById('element-section');
+  if (existingElementSection) {
+    existingElementSection.remove();
+  }
+  
+  // Create element section
+  const elementSection = document.createElement('div');
+  elementSection.className = 'col-span-full bg-gray-900 border-2 border-orange-400 rounded p-4 mb-4';
+  elementSection.id = 'element-section';
+  
+  const elementGrid = document.createElement('div');
+  elementGrid.className = 'grid grid-cols-1 md:grid-cols-2 gap-4';
+  
+  // First element dropdown
+  const element1Div = document.createElement('div');
+  const element1Label = document.createElement('label');
+  element1Label.className = 'block text-orange-300 font-semibold mb-2';
+  element1Label.textContent = 'Element 1';
+  
+  const element1Select = document.createElement('select');
+  element1Select.id = 'element1-select';
+  element1Select.className = 'w-full bg-gray-900 border border-orange-500 text-gray-300 rounded p-2 text-sm focus:outline-none focus:border-orange-400';
+  
+  const defaultElement1Option = document.createElement('option');
+  defaultElement1Option.value = '';
+  defaultElement1Option.textContent = 'None';
+  element1Select.appendChild(defaultElement1Option);
+  
+  // Add single elements only
+  const singleElements = ['Corrosive', 'Cryo', 'Fire', 'Radiation', 'Shock'];
+  singleElements.forEach(elementName => {
+    const elementData = ELEMENT_DATA['Weapon Elements'][elementName];
+    const option = document.createElement('option');
+    option.value = elementName;
+    option.dataset.string = elementData.String;
+    option.dataset.id = elementData.ID;
+    option.textContent = elementName;
+    element1Select.appendChild(option);
+  });
+  
+  element1Select.addEventListener('change', handleElement1Change);
+  
+  element1Div.appendChild(element1Label);
+  element1Div.appendChild(element1Select);
+  elementGrid.appendChild(element1Div);
+  
+  // Second element dropdown (initially hidden)
+  const element2Div = document.createElement('div');
+  element2Div.id = 'element2-container';
+  element2Div.className = 'hidden';
+  
+  const element2Label = document.createElement('label');
+  element2Label.className = 'block text-orange-300 font-semibold mb-2';
+  element2Label.textContent = 'Element 2';
+  
+  const element2Select = document.createElement('select');
+  element2Select.id = 'element2-select';
+  element2Select.className = 'w-full bg-gray-900 border border-orange-500 text-gray-300 rounded p-2 text-sm focus:outline-none focus:border-orange-400';
+  
+  element2Select.addEventListener('change', handleElement2Change);
+  
+  element2Div.appendChild(element2Label);
+  element2Div.appendChild(element2Select);
+  elementGrid.appendChild(element2Div);
+  
+  elementSection.appendChild(elementGrid);
+  
+  // Insert after rarity section
+  const raritySection = document.getElementById('rarity-section');
+  if (raritySection) {
+    raritySection.parentNode.insertBefore(elementSection, raritySection.nextSibling);
+  } else {
+    partsGrid.prepend(elementSection);
+  }
+}
+
+// Handle element 1 change
+function handleElement1Change(e) {
+  const selectedOption = e.target.options[e.target.selectedIndex];
+  const element2Container = document.getElementById('element2-container');
+  const element2Select = document.getElementById('element2-select');
+  
+  if (selectedOption.value) {
+    // Store first element
+    selectedElements = [{
+      name: selectedOption.value,
+      ID: selectedOption.dataset.id,
+      String: selectedOption.dataset.string
+    }];
+    
+    // Show second element dropdown and populate it
+    element2Container.classList.remove('hidden');
+    element2Select.innerHTML = '<option value="">None</option>';
+    
+    const firstElement = selectedOption.value;
+    const singleElements = ['Corrosive', 'Cryo', 'Fire', 'Radiation', 'Shock'];
+    
+    singleElements.forEach(elementName => {
+      if (elementName !== firstElement) {
+        const option = document.createElement('option');
+        option.value = elementName;
+        option.textContent = elementName;
+        element2Select.appendChild(option);
+      }
+    });
+  } else {
+    // No first element selected
+    selectedElements = [];
+    element2Container.classList.add('hidden');
+  }
+  
+  updateOutput();
+}
+
+// Handle element 2 change
+function handleElement2Change(e) {
+  const selectedOption = e.target.options[e.target.selectedIndex];
+  
+  if (selectedOption.value && selectedElements.length > 0) {
+    const firstElement = selectedElements[0].name;
+    const secondElement = selectedOption.value;
+    console.log(firstElement);
+    console.log(secondElement);
+    const combinedKey = `${firstElement} - ${secondElement}`;
+    console.log(combinedKey);
+    
+    // Determine if MFR is Maliwan
+    const isMaliwan = selectedManufacturer === 'Maliwan';
+    const elementList = isMaliwan ? ELEMENT_DATA['Maliwan Elements'] : ELEMENT_DATA['Weapon Elements'];
+    
+    const combinedData = elementList[combinedKey];
+    
+    if (combinedData) {
+      // Add the second element if one is selected
+      selectedElements.push({
+        name: combinedKey,
+        ID: combinedData.ID,
+        String: combinedData.String
+      });
+      // Replace the first element with the combined element
+      // selectedElements = [{
+      //   name: combinedKey,
+      //   ID: combinedData.ID,
+      //   String: combinedData.String
+      // }];
+    }
+    console.log(selectedElements);
+  } else if (selectedElements.length > 0) {
+    // Reset to just first element
+    const element1Select = document.getElementById('element1-select');
+    const selectedOption1 = element1Select.options[element1Select.selectedIndex];
+    selectedElements = [{
+      name: selectedOption1.value,
+      ID: selectedOption1.dataset.id,
+      String: selectedOption1.dataset.string
+    }];
+  }
+  
+  updateOutput();
 }
 
 // Get rarity name from string
@@ -516,6 +686,15 @@ function generateOutput() {
     }
   }
   
+  // Add elements
+  selectedElements.forEach(element => {
+    if (outputMode === 'strings') {
+      output.push({ type: 'element', value: element.String });
+    } else {
+      output.push({ type: 'element', value: element.ID });
+    }
+  });
+  
   // Add parts
   Object.entries(selectedParts).forEach(([partType, partData]) => {
     if (multiSelectTypes.includes(partType)) {
@@ -550,7 +729,7 @@ function formatOutput(output) {
         return `${item.value}` + ',';
       } else if (item.type === 'base') {
         return `${item.value}`;
-      } else if (item.type === 'rarity') {
+      } else if (item.type === 'rarity' || item.type === 'element') {
         return `"${item.value}"`;
       } else {
         return `"${item.value}"`;
@@ -626,6 +805,7 @@ function resetBuilder() {
   selectedWeaponType = '';
   selectedParts = {};
   selectedRarity = null;
+  selectedElements = []; // Add this
   
   manufacturerSelect.value = '';
   weaponTypeSelect.value = '';

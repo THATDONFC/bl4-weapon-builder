@@ -1,0 +1,186 @@
+{
+    "Weapon Elements": {
+        "Corrosive": {
+            "String": "Weapon.part_corrosive",
+            "ID": "1:10"
+        },
+        "Cryo": {
+            "String": "Weapon.part_cryo",
+            "ID": "1:11"
+        },
+        "Fire": {
+            "String": "Weapon.part_fire",
+            "ID": "1:12"
+        },
+        "Radiation": {
+            "String": "Weapon.part_radiation",
+            "ID": "1:13"
+        },
+        "Shock": {
+            "String": "Weapon.part_shock",
+            "ID": "1:14"
+        },
+        "Corrosive - Cryo": {
+            "String": "Weapon.part_corrosive_cryo",
+            "ID": "1:40"
+        },
+        "Corrosive - Fire": {
+            "String": "Weapon.part_corrosive_fire",
+            "ID": "1:44"
+        },
+        "Corrosive - Radiation": {
+            "String": "Weapon.part_corrosive_radiation",
+            "ID": "1:32"
+        },
+        "Corrosive - Shock": {
+            "String": "Weapon.part_corrosive_shock",
+            "ID": "1:47"
+        },
+        "Cryo - Corrosive": {
+            "String": "Weapon.part_cryo_corrosive",
+            "ID": "1:36"
+        },
+        "Cryo - Fire": {
+            "String": "Weapon.part_cryo_fire",
+            "ID": "1:42"
+        },
+        "Cryo - Radiation": {
+            "String": "Weapon.part_cryo_radiation",
+            "ID": "1:31"
+        },
+        "Cryo - Shock": {
+            "String": "Weapon.part_cryo_shock",
+            "ID": "1:46"
+        },
+        "Fire - Corrosive": {
+            "String": "Weapon.part_fire_corrosive",
+            "ID": "1:35"
+        },
+        "Fire - Cryo": {
+            "String": "Weapon.part_fire_cryo",
+            "ID": "1:39"
+        },
+        "Fire - Radiation": {
+            "String": "Weapon.part_fire_radiation",
+            "ID": "1:30"
+        },
+        "Fire - Shock": {
+            "String": "Weapon.part_fire_shock",
+            "ID": "1:49"
+        },
+        "Radiation - Corrosive": {
+            "String": "Weapon.part_radiation_corrosive",
+            "ID": "1:33"
+        },
+        "Radiation - Cryo": {
+            "String": "Weapon.part_radiation_cryo",
+            "ID": "1:37"
+        },
+        "Radiation - Fire": {
+            "String": "Weapon.part_radiation_fire",
+            "ID": "1:41"
+        },
+        "Radiation - Shock": {
+            "String": "Weapon.part_radiation_shock",
+            "ID": "1:45"
+        },
+        "Shock - Corrosive": {
+            "String": "Weapon.part_shock_corrosive",
+            "ID": "1:34"
+        },
+        "Shock - Cryo": {
+            "String": "Weapon.part_shock_cryo",
+            "ID": "1:38"
+        },
+        "Shock - Fire": {
+            "String": "Weapon.part_shock_fire",
+            "ID": "1:43"
+        },
+        "Shock - Radiation": {
+            "String": "Weapon.part_shock_radiation",
+            "ID": "1:29"
+        }
+    },
+    "Maliwan Elements": {
+        "Corrosive - Cryo": {
+            "String": "Weapon.part_corrosive_cryo_mal",
+            "ID": "1:28"
+        },
+        "Corrosive - Fire": {
+            "String": "Weapon.part_corrosive_fire_mal",
+            "ID": "1:27"
+        },
+        "Corrosive - Radiation": {
+            "String": "Weapon.part_corrosive_radiation_mal",
+            "ID": "1:26"
+        },
+        "Corrosive - Shock": {
+            "String": "Weapon.part_corrosive_shock_mal",
+            "ID": "1:25"
+        },
+        "Cryo - Corrosive": {
+            "String": "Weapon.part_cryo_corrosive_mal",
+            "ID": "1:24"
+        },
+        "Cryo - Fire": {
+            "String": "Weapon.part_cryo_fire_mal",
+            "ID": "1:23"
+        },
+        "Cryo - Radiation": {
+            "String": "Weapon.part_cryo_radiation_mal",
+            "ID": "1:22"
+        },
+        "Cryo - Shock": {
+            "String": "Weapon.part_cryo_shock_mal",
+            "ID": "1:21"
+        },
+        "Fire - Corrosive": {
+            "String": "Weapon.part_fire_corrosive_mal",
+            "ID": "1:20"
+        },
+        "Fire - Cryo": {
+            "String": "Weapon.part_fire_cryo_mal",
+            "ID": "1:19"
+        },
+        "Fire - Radiation": {
+            "String": "Weapon.part_fire_radiation_mal",
+            "ID": "1:18"
+        },
+        "Fire - Shock": {
+            "String": "Weapon.part_fire_shock_mal",
+            "ID": "1:48"
+        },
+        "Radiation - Corrosive": {
+            "String": "Weapon.part_radiation_corrosive_mal",
+            "ID": "1:17"
+        },
+        "Radiation - Cryo": {
+            "String": "Weapon.part_radiation_cryo_mal",
+            "ID": "1:16"
+        },
+        "Radiation - Fire": {
+            "String": "Weapon.part_radiation_fire_mal",
+            "ID": "1:15"
+        },
+        "Radiation - Shock": {
+            "String": "Weapon.part_radiation_shock_mal",
+            "ID": "1:9"
+        },
+        "Shock - Corrosive": {
+            "String": "Weapon.part_shock_corrosive_mal",
+            "ID": "1:8"
+        },
+        "Shock - Cryo": {
+            "String": "Weapon.part_shock_cryo_mal",
+            "ID": "1:7"
+        },
+        "Shock - Fire": {
+            "String": "Weapon.part_shock_fire_mal",
+            "ID": "1:6"
+        },
+        "Shock - Radiation": {
+            "String": "Weapon.part_shock_radiation_mal",
+            "ID": "1:5"
+        }
+    }
+}
