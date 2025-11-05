@@ -1853,7 +1853,7 @@
             },
             {
                 "ID": "71",
-                "Part Type": "Unknown",
+                "Part Type": "Scope Accessory",
                 "String": "JAK_AR.part_scope_02_lens_02_b02"
             },
             {
@@ -2677,17 +2677,17 @@
             },
             {
                 "ID": "92",
-                "Part Type": "Unknown",
+                "Part Type": "Magazine",
                 "String": "JAK_SG.part_mag_02_b02"
             },
             {
                 "ID": "93",
-                "Part Type": "Unknown",
+                "Part Type": "Magazine",
                 "String": "JAK_SG.part_mag_01_b01"
             },
             {
                 "ID": "94",
-                "Part Type": "Unknown",
+                "Part Type": "Magazine",
                 "String": "JAK_SG.part_mag_01_b02"
             }
         ],
