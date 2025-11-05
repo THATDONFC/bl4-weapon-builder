@@ -311,8 +311,28 @@ function populateParts() {
   const multiSelectTypes = ['Body Accessory', 'Barrel Accessory', 'Scope Accessory'];
   const maxSelections = 4;
   
-  // Create dropdowns for each part type
-  Object.entries(partsByType).forEach(([partType, partsList]) => {
+  // Define the desired order for part types
+  const partTypeOrder = [
+    'Body',
+    'Body Accessory',
+    'Barrel',
+    'Barrel Accessory',
+    'Magazine',
+    'Stat Modifier',
+    'Grip',
+    'Foregrip',
+    'Manufacturer Part',
+    'Scope',
+    'Scope Accessory',
+    'Underbarrel',
+    'Underbarrel Accessory'
+  ];
+  
+  // Create dropdowns for each part type in the specified order
+  partTypeOrder.forEach(partType => {
+    const partsList = partsByType[partType];
+    if (!partsList) return; // Skip if this weapon doesn't have this part type
+    
     const partDiv = document.createElement('div');
     
     const label = document.createElement('label');
