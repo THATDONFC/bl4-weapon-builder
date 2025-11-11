@@ -139,19 +139,9 @@
                   "Legendary": ""
                 },
                 {
-                  "ID": "59",
-                  "String": "DAD_SM.comp_05_legendary_Conglomerate",
-                  "Legendary": "Frangible-MISSING"
-                },
-                {
                   "ID": "63",
                   "String": "DAD_SM.comp_05_legendary_bloodstarved",
                   "Legendary": "Darkbeast"
-                },
-                {
-                  "ID": "68",
-                  "String": "DAD_SM.comp_05_legendary_loarmaster",
-                  "Legendary": "Rogue"
                 }
             ]
         }
@@ -189,11 +179,6 @@
                   "ID": "74",
                   "String": "JAK_AR.comp_05_legendary_rowan",
                   "Legendary": "Rowan's Charge"
-                },
-                {
-                  "ID": "77",
-                  "String": "JAK_AR.comp_05_legendary_screenwriter",
-                  "Legendary": "INCOMPLETE"
                 }
             ]
         },
@@ -662,12 +647,12 @@
                   "Legendary": ""
                 },
                 {
-                  "ID": "1",
+                  "ID": "19",
                   "String": "BOR_SR.comp_05_legendary_stray",
                   "Legendary": "Stray"
                 },
                 {
-                  "ID": "19",
+                  "ID": "1",
                   "String": "BOR_SR.comp_05_legendary_Vamoose",
                   "Legendary": "Vamoose"
                 }
