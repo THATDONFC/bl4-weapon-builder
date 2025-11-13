@@ -37,6 +37,8 @@ const copyBtn = document.getElementById('copy-btn');
 const downloadBtn = document.getElementById('download-btn');
 const resetBtn = document.getElementById('reset-btn');
 
+const multiSelectTypes = ['Body Accessory', 'Barrel Accessory', 'Manufacturer Part', 'Scope Accessory'];
+
 // Initialize
 function init() {
   populateManufacturers();
@@ -471,7 +473,7 @@ function populateParts() {
   partsGrid.innerHTML = '';
   
   // Part types that allow multiple selections
-  const multiSelectTypes = ['Body Accessory', 'Barrel Accessory', 'Scope Accessory'];
+  // const multiSelectTypes = ['Body Accessory', 'Barrel Accessory', 'Manufacturer Part', 'Scope Accessory'];
   const maxSelections = 4;
   
   // Define the desired order for part types
@@ -540,33 +542,73 @@ function populateParts() {
       partDiv.appendChild(label);
       partDiv.appendChild(selectsContainer);
     } else {
-      // Single selection dropdown
-      const select = document.createElement('select');
-      select.className = 'w-full bg-gray-900 border border-orange-500 text-gray-300 rounded p-2 text-sm focus:outline-none focus:border-orange-400';
-      select.dataset.partType = partType;
+      // Multi-dropdown if Body has 2 parts
+      const isBodyPart = partType === 'Body';
+      const bodySlots = isBodyPart && partsList.length > 1 ? 2 : 1;
       
-      const defaultOption = document.createElement('option');
-      defaultOption.value = '';
-      defaultOption.textContent = 'None';
-      select.appendChild(defaultOption);
-      
-      partsList.forEach(part => {
-        const option = document.createElement('option');
-        option.value = part.ID;
-        option.textContent = part.String.split('.').pop();
-        option.dataset.string = part.String;
-        select.appendChild(option);
-      });
-      
-      select.addEventListener('change', (e) => handlePartSelection(e, partType, partsList));
-      
-      const stringDisplay = document.createElement('div');
-      stringDisplay.className = 'mt-1 text-xs text-gray-400 truncate hidden';
-      stringDisplay.dataset.partType = partType;
-      
-      partDiv.appendChild(label);
-      partDiv.appendChild(select);
-      partDiv.appendChild(stringDisplay);
+      if (isBodyPart && bodySlots === 2) {
+        // Create container for Body part dropdowns
+        const selectsContainer = document.createElement('div');
+        selectsContainer.className = 'space-y-2';
+        
+        for (let i = 0; i < bodySlots; i++) {
+          const selectWrapper = document.createElement('div');
+          
+          const select = document.createElement('select');
+          select.className = 'w-full bg-gray-900 border border-orange-500 text-gray-300 rounded p-2 text-sm focus:outline-none focus:border-orange-400';
+          select.dataset.partType = partType;
+          select.dataset.index = i;
+          
+          const defaultOption = document.createElement('option');
+          defaultOption.value = '';
+          defaultOption.textContent = `Slot ${i + 1} - None`;
+          select.appendChild(defaultOption);
+          
+          partsList.forEach(part => {
+            const option = document.createElement('option');
+            option.value = part.ID;
+            option.textContent = part.String.split('.').pop();
+            option.dataset.string = part.String;
+            select.appendChild(option);
+          });
+          
+          select.addEventListener('change', (e) => handlePartSelection(e, partType, partsList, i));
+          
+          selectWrapper.appendChild(select);
+          selectsContainer.appendChild(selectWrapper);
+        }
+        
+        partDiv.appendChild(label);
+        partDiv.appendChild(selectsContainer);
+      } else {
+        // Single selection dropdown
+        const select = document.createElement('select');
+        select.className = 'w-full bg-gray-900 border border-orange-500 text-gray-300 rounded p-2 text-sm focus:outline-none focus:border-orange-400';
+        select.dataset.partType = partType;
+        
+        const defaultOption = document.createElement('option');
+        defaultOption.value = '';
+        defaultOption.textContent = 'None';
+        select.appendChild(defaultOption);
+        
+        partsList.forEach(part => {
+          const option = document.createElement('option');
+          option.value = part.ID;
+          option.textContent = part.String.split('.').pop();
+          option.dataset.string = part.String;
+          select.appendChild(option);
+        });
+        
+        select.addEventListener('change', (e) => handlePartSelection(e, partType, partsList));
+        
+        const stringDisplay = document.createElement('div');
+        stringDisplay.className = 'mt-1 text-xs text-gray-400 truncate hidden';
+        stringDisplay.dataset.partType = partType;
+        
+        partDiv.appendChild(label);
+        partDiv.appendChild(select);
+        partDiv.appendChild(stringDisplay);
+      }
     }
     
     partsGrid.appendChild(partDiv);
@@ -576,11 +618,12 @@ function populateParts() {
 // Handle part selection
 function handlePartSelection(e, partType, partsList, index = null) {
   const selectedId = e.target.value;
-  const multiSelectTypes = ['Body Accessory', 'Barrel Accessory', 'Scope Accessory'];
+  // const multiSelectTypes = ['Body Accessory', 'Barrel Accessory', 'Manufacturer Part', 'Scope Accessory'];
   const isMultiSelect = multiSelectTypes.includes(partType);
+  const isBodyWithIndex = partType === 'Body' && index !== null;
   
-  if (isMultiSelect && index !== null) {
-    // Handle multi-select part type
+  if ((isMultiSelect || isBodyWithIndex) && index !== null) {
+    // Handle multi-select part type or Body with 2 slots
     if (!selectedParts[partType]) {
       selectedParts[partType] = [];
     }
@@ -659,7 +702,7 @@ function generateBase() {
 // Generate output array
 function generateOutput() {
   const output = [];
-  const multiSelectTypes = ['Body Accessory', 'Barrel Accessory', 'Scope Accessory'];
+  // const multiSelectTypes = ['Body Accessory', 'Barrel Accessory', 'Manufacturer Part', 'Scope Accessory'];
   
   // Add Type ID first
   const typeID = getTypeID();
@@ -690,8 +733,10 @@ function generateOutput() {
   
   // Add parts
   Object.entries(selectedParts).forEach(([partType, partData]) => {
-    if (multiSelectTypes.includes(partType)) {
-      // Handle multi-select parts (arrays)
+    const isBodyWithMultiple = partType === 'Body' && Array.isArray(partData);
+    
+    if (multiSelectTypes.includes(partType) || isBodyWithMultiple) {
+      // Handle multi-select parts or Body with multiple selections
       partData.forEach(part => {
         if (part) {
           if (outputMode === 'strings') {
