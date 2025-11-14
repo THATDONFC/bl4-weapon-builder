@@ -81,6 +81,15 @@ function normalizePartName(partString, stats = '') {
   
   // Magazine patterns: mag_01, mag_03_tor, etc.
   if (/^mag_\d+/.test(normalized)) {
+    // Stat modifiers (borg barrel)
+    if (normalized.includes('borg_barrel')) {
+      
+      const parts = normalized.split('_');
+      const num = '05'; // Ripper Mag Number
+      const barrel = parts[parts.length - 1];
+
+      return `Mag ${num} Mod Barrel ${barrel} Ripper`;
+    }
     const parts = normalized.split('_');
     const num = parts[1];
     
@@ -88,20 +97,16 @@ function normalizePartName(partString, stats = '') {
     if (parts.length > 2) {
       const mfgCode = parts[2];
       const mfgMap = {
-        'tor': 'Torgue',
-        'cov': 'CoV',
-        'borg': 'Ripper'
+        'tor':  'Torgue',
+        'cov':  'CoV',
+        'borg': 'Ripper',
+        'b01': 'Barrel 01',
+        'b02': 'Barrel 02'
       };
       const mfg = mfgMap[mfgCode] || mfgCode.charAt(0).toUpperCase() + mfgCode.slice(1);
       return `Mag ${num} ${mfg}`;
     }
     return `Mag ${num}`;
-  }
-  
-  // Magazine accessories: mag_ted_thrown_01, etc.
-  if (/^mag_ted_thrown/.test(normalized)) {
-    const num = normalized.split('_').pop();
-    return `Mag Acc Tediore ${num}`;
   }
   
   // Grip: grip_01, grip_02, etc.
@@ -176,7 +181,7 @@ function normalizePartName(partString, stats = '') {
     if (normalized.includes('hyp')) return 'Hyperion Shield (Always Needed)';
   }
   
-  // Shield parts
+  // Hyperion shield parts
   if (normalized.includes('shield')) {
     if (normalized.includes('ricochet')) return 'Hyperion Ricochet';
     if (normalized.includes('ammo')) return 'Hyperion Absorb';
@@ -190,19 +195,41 @@ function normalizePartName(partString, stats = '') {
     if (normalized.includes('normal')) return 'Torgue Impact';
   }
   
-  // Body magazine types (ammo type indicators)
+  // Daedalus ammo types
   if (normalized.includes('body_mag') || normalized.includes('secondary_ammo')) {
-    if (normalized.includes('_ar')) return 'Daedalus AR Ammo';
+    if (normalized.includes('_ar') || normalized.includes('_assaultrifle')) return 'Daedalus AR Ammo';
     if (normalized.includes('_ps')) return 'Daedalus Pistol Ammo';
     if (normalized.includes('_smg')) return 'Daedalus SMG Ammo';
     if (normalized.includes('_sg')) return 'Daedalus Shotgun Ammo';
     if (normalized.includes('_sr')) return 'Daedalus Sniper Ammo';
   }
   
-  // Stat modifiers (thrown magazine parts)
+  // Stat modifiers (tediore parts)
   if (normalized.includes('mag_ted_thrown')) {
-    const num = normalized.split('_').pop();
-    return `Mag Stat Modifier ${num}`;
+    // Special case for rainbow vomit
+    if (normalized.includes('rainbowvomit')) {
+      return stats || 'Rainbow Vomit Modifier';
+    }
+    
+    const parts = normalized.split('_');
+    const num = parts[3]; // Get the mag number
+    
+    // Check for manufacturer suffix
+    let mfg = '';
+    if (parts.includes('tor')) {
+      mfg = ' Torgue';
+    } else if (parts.includes('cov')) {
+      mfg = ' CoV';
+    } else if (parts.includes('bor') || parts.includes('borg')) {
+      mfg = ' Ripper';
+    }
+    
+    return `Mag ${num} Mod Tediore ${mfg}`;
+  }
+
+  // Also add check for the body_ele_rainbowvomit case
+  if (normalized.includes('body_ele_rainbowvomit')) {
+    return stats || 'Rainbow Vomit Element';
   }
   
   // If no pattern matched, return a cleaned up version
@@ -227,8 +254,9 @@ function populateSelectWithParts(selectElement, partsList) {
     // Determine what to show in dropdown
     let displayStats = '';
 
-    // Skip showing stats for Manufacturer Parts and Underbarrels since the name already contains the info
-    if (partType !== 'Underbarrel' && partType !== 'Manufacturer Part') {
+    // Skip showing stats for Manufacturer Parts, Underbarrels and Color Spray
+    const isColorSpray = part.String.includes('body_ele_rainbowvomit');
+    if (partType !== 'Underbarrel' && partType !== 'Underbarrel Accessory' && partType !== 'Manufacturer Part' && !isColorSpray) {
       displayStats = stats;
       if (stats.includes(',')) {
         // Extended info

@@ -1712,12 +1712,6 @@
                 "Stats": "3.3s Reload"
             },
             {
-                "ID": "69",
-                "Part Type": "Barrel",
-                "String": "DAD_SM.part_barrel_01_loarmaster",
-                "Stats": "Daedalus SMG, 658x6 Damage, 71% Acc, 6.7/s FR, 2 Shot"
-            },
-            {
                 "ID": "79",
                 "Part Type": "Underbarrel",
                 "String": "DAD_SM.part_underbarrel_01_stungrenade",
@@ -2236,12 +2230,6 @@
                 "Part Type": "Barrel",
                 "String": "JAK_AR.part_barrel_02_rowan",
                 "Stats": "Rowan's Charge, 1517 Damage, 75% Acc, 6.0/s FR"
-            },
-            {
-                "ID": "76",
-                "Part Type": "Barrel",
-                "String": "JAK_AR.part_barrel_02_screenwriter",
-                "Stats": "NOT IMPLEMENTED"
             },
             {
                 "ID": "85",
@@ -10625,7 +10613,7 @@
                 "ID": "50",
                 "Part Type": "Underbarrel Accessory",
                 "String": "VLA_AR.part_underbarrel_grenade_acc",
-                "Stats": "No Stat Changes"
+                "Stats": "Grenade Launcher Acc - No Stat Changes"
             },
             {
                 "ID": "51",
@@ -10643,19 +10631,19 @@
                 "ID": "53",
                 "Part Type": "Underbarrel Accessory",
                 "String": "VLA_AR.part_underbarrel_secondbarrel_acc_a",
-                "Stats": "No Stat Changes"
+                "Stats": "Extra Barrel Acc - No Stat Changes"
             },
             {
                 "ID": "54",
                 "Part Type": "Underbarrel Accessory",
                 "String": "VLA_AR.part_underbarrel_secondbarrel_acc_b",
-                "Stats": "+Ammo"
+                "Stats": "Extra Barrel Acc - +Ammo"
             },
             {
                 "ID": "55",
                 "Part Type": "Underbarrel Accessory",
                 "String": "VLA_AR.part_underbarrel_secondbarrel_acc_c",
-                "Stats": "No Stat Changes"
+                "Stats": "Extra Barrel Acc - No Stat Changes"
             },
             {
                 "ID": "56",
@@ -10709,13 +10697,13 @@
                 "ID": "66",
                 "Part Type": "Underbarrel Accessory",
                 "String": "VLA_AR.part_underbarrel_07_acc_vis",
-                "Stats": "No Stat Changes"
+                "Stats": "Dual Damage Acc - No Stat Changes"
             },
             {
                 "ID": "67",
                 "Part Type": "Underbarrel Accessory",
                 "String": "VLA_AR.part_underbarrel_07_b",
-                "Stats": "No Stat Changes"
+                "Stats": "Dual Damage Acc - No Stat Changes"
             },
             {
                 "ID": "69",
@@ -10835,7 +10823,7 @@
                 "ID": "89",
                 "Part Type": "Underbarrel Accessory",
                 "String": "VLA_AR.part_underbarrel_overdrive_acc",
-                "Stats": "No Stat Changes"
+                "Stats": "Overdrive Acc - No Stat Changes"
             },
             {
                 "ID": "90",
@@ -11179,7 +11167,7 @@
                 "ID": "55",
                 "Part Type": "Underbarrel Accessory",
                 "String": "VLA_SM.part_underbarrel_microrockets_acc",
-                "Stats": "Visual Change, No Stat Changes"
+                "Stats": "Zip Rockets Acc - No Stat Changes"
             },
             {
                 "ID": "56",
@@ -11197,7 +11185,7 @@
                 "ID": "58",
                 "Part Type": "Underbarrel Accessory",
                 "String": "VLA_SM.part_underbarrel_secondbarrel_acc",
-                "Stats": "Visual Change, No Stat Changes"
+                "Stats": "Extra Barrel Acc - No Stat Changes"
             },
             {
                 "ID": "59",
@@ -11703,19 +11691,19 @@
                 "ID": "56",
                 "Part Type": "Underbarrel Accessory",
                 "String": "VLA_SR.part_underbarrel_secondbarrel_acc_a",
-                "Stats": "No Stat Changes"
+                "Stats": "Extra Barrel Acc - No Stat Changes"
             },
             {
                 "ID": "57",
                 "Part Type": "Underbarrel Accessory",
                 "String": "VLA_SR.part_underbarrel_secondbarrel_acc_b",
-                "Stats": "+Ammo"
+                "Stats": "Extra Barrel Acc - +Ammo"
             },
             {
                 "ID": "58",
                 "Part Type": "Underbarrel Accessory",
                 "String": "VLA_SR.part_underbarrel_secondbarrel_acc_c",
-                "Stats": "No Stat Changes"
+                "Stats": "Extra Barrel Acc - No Stat Changes"
             },
             {
                 "ID": "59",
