@@ -5,7 +5,7 @@
                 "ID": "1",
                 "Part Type": "Body",
                 "String": "DAD_AR.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "2",
@@ -209,7 +209,7 @@
                 "ID": "36",
                 "Part Type": "Body",
                 "String": "DAD_AR.part_body_bolt",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "37",
@@ -353,7 +353,7 @@
                 "ID": "60",
                 "Part Type": "Underbarrel",
                 "String": "DAD_AR.part_underbarrel_06_malswitch",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Maliwan Element Switch"
             },
             {
                 "ID": "61",
@@ -475,7 +475,7 @@
                 "ID": "2",
                 "Part Type": "Body",
                 "String": "DAD_PS.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "3",
@@ -733,7 +733,7 @@
                 "ID": "45",
                 "Part Type": "Underbarrel",
                 "String": "DAD_PS.part_underbarrel_06_malswitch",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Maliwan Element Switch"
             },
             {
                 "ID": "46",
@@ -915,7 +915,7 @@
                 "ID": "2",
                 "Part Type": "Body",
                 "String": "DAD_SG.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "3",
@@ -1167,7 +1167,7 @@
                 "ID": "44",
                 "Part Type": "Underbarrel",
                 "String": "DAD_SG.part_underbarrel_06_malswitch",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Maliwan Element Switch"
             },
             {
                 "ID": "45",
@@ -1613,7 +1613,7 @@
                 "ID": "47",
                 "Part Type": "Underbarrel",
                 "String": "DAD_SM.part_underbarrel_06_malswitch",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Maliwan Element Switch"
             },
             {
                 "ID": "48",
@@ -1691,7 +1691,7 @@
                 "ID": "62",
                 "Part Type": "Body",
                 "String": "DAD_SM.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "64",
@@ -1815,7 +1815,7 @@
                 "ID": "2",
                 "Part Type": "Body",
                 "String": "JAK_AR.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "3",
@@ -2163,7 +2163,7 @@
                 "ID": "60",
                 "Part Type": "Underbarrel",
                 "String": "JAK_AR.part_underbarrel_05_ammoswitcher",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Daedalus Ammo Switch"
             },
             {
                 "ID": "61",
@@ -2255,7 +2255,7 @@
                 "ID": "2",
                 "Part Type": "Body",
                 "String": "JAK_PS.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "3",
@@ -2525,7 +2525,7 @@
                 "ID": "47",
                 "Part Type": "Underbarrel",
                 "String": "JAK_PS.part_underbarrel_05_ammoswitcher",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Daedalus Ammo Switch"
             },
             {
                 "ID": "48",
@@ -2701,7 +2701,7 @@
                 "ID": "2",
                 "Part Type": "Body",
                 "String": "JAK_SG.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "3",
@@ -2983,7 +2983,7 @@
                 "ID": "49",
                 "Part Type": "Underbarrel",
                 "String": "JAK_SG.part_underbarrel_05_ammoswitcher",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Daedalus Ammo Switch"
             },
             {
                 "ID": "50",
@@ -3231,7 +3231,7 @@
                 "ID": "2",
                 "Part Type": "Body",
                 "String": "JAK_SR.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "3",
@@ -3507,7 +3507,7 @@
                 "ID": "48",
                 "Part Type": "Underbarrel",
                 "String": "JAK_SR.part_underbarrel_05_ammoswitcher",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Daedalus Ammo Switch"
             },
             {
                 "ID": "49",
@@ -3667,7 +3667,7 @@
                 "ID": "2",
                 "Part Type": "Body",
                 "String": "MAL_SG.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "3",
@@ -3931,7 +3931,7 @@
                 "ID": "46",
                 "Part Type": "Underbarrel",
                 "String": "MAL_SG.part_underbarrel_05_ammoswitcher",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Daedalus Ammo Switch"
             },
             {
                 "ID": "47",
@@ -4113,7 +4113,7 @@
                 "ID": "2",
                 "Part Type": "Body",
                 "String": "MAL_SM.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "3",
@@ -4389,7 +4389,7 @@
                 "ID": "48",
                 "Part Type": "Underbarrel",
                 "String": "MAL_SM.part_underbarrel_05_ammoswitcher",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Daedalus Ammo Switch"
             },
             {
                 "ID": "49",
@@ -4553,7 +4553,7 @@
                 "ID": "2",
                 "Part Type": "Body",
                 "String": "MAL_SR.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "3",
@@ -4817,7 +4817,7 @@
                 "ID": "46",
                 "Part Type": "Underbarrel",
                 "String": "MAL_SR.part_underbarrel_05_ammoswitcher",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Daedalus Ammo Switch"
             },
             {
                 "ID": "47",
@@ -5421,7 +5421,7 @@
                 "ID": "69",
                 "Part Type": "Underbarrel",
                 "String": "ORD_AR.part_underbarrel_05_ammoswitcher",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Daedalus Ammo Switch"
             },
             {
                 "ID": "70",
@@ -5445,7 +5445,7 @@
                 "ID": "74",
                 "Part Type": "Body",
                 "String": "ORD_AR.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             }
         ],
         "Pistol": [
@@ -5459,7 +5459,7 @@
                 "ID": "2",
                 "Part Type": "Body",
                 "String": "ORD_PS.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "3",
@@ -5699,7 +5699,7 @@
                 "ID": "42",
                 "Part Type": "Underbarrel",
                 "String": "ORD_PS.part_underbarrel_05_ammoswitcher",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Daedalus Ammo Switch"
             },
             {
                 "ID": "43",
@@ -5905,7 +5905,7 @@
                 "ID": "2",
                 "Part Type": "Body",
                 "String": "ORD_SR.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "3",
@@ -6229,7 +6229,7 @@
                 "ID": "56",
                 "Part Type": "Underbarrel",
                 "String": "ORD_SR.part_underbarrel_05_ammoswitcher",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Daedalus Ammo Switch"
             },
             {
                 "ID": "57",
@@ -6353,7 +6353,7 @@
                 "ID": "2",
                 "Part Type": "Body",
                 "String": "BOR_SG.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "3",
@@ -6635,13 +6635,13 @@
                 "ID": "52",
                 "Part Type": "Underbarrel",
                 "String": "BOR_SG.part_underbarrel_05_ammoswitcher",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Daedalus Ammo Switch"
             },
             {
                 "ID": "53",
                 "Part Type": "Underbarrel",
                 "String": "BOR_SG.part_underbarrel_06_malswitch",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Maliwan Element Switch"
             },
             {
                 "ID": "60",
@@ -6787,7 +6787,7 @@
                 "ID": "2",
                 "Part Type": "Body",
                 "String": "BOR_SM.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "3",
@@ -7045,7 +7045,7 @@
                 "ID": "48",
                 "Part Type": "Underbarrel",
                 "String": "BOR_SM.part_underbarrel_06_malswitch",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Maliwan Element Switch"
             },
             {
                 "ID": "49",
@@ -7081,7 +7081,7 @@
                 "ID": "54",
                 "Part Type": "Underbarrel",
                 "String": "BOR_SM.part_underbarrel_05_ammoswitcher",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Daedalus Ammo Switch"
             },
             {
                 "ID": "55",
@@ -7215,7 +7215,7 @@
                 "ID": "2",
                 "Part Type": "Body",
                 "String": "BOR_SR.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "3",
@@ -7461,7 +7461,7 @@
                 "ID": "46",
                 "Part Type": "Underbarrel",
                 "String": "BOR_SR.part_underbarrel_06_malswitch",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Maliwan Element Switch"
             },
             {
                 "ID": "47",
@@ -7503,7 +7503,7 @@
                 "ID": "53",
                 "Part Type": "Underbarrel",
                 "String": "BOR_SR.part_underbarrel_05_ammoswitcher",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Daedalus Ammo Switch"
             },
             {
                 "ID": "54",
@@ -7651,7 +7651,7 @@
                 "ID": "2",
                 "Part Type": "Body",
                 "String": "TED_AR.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "3",
@@ -8029,13 +8029,13 @@
                 "ID": "69",
                 "Part Type": "Underbarrel",
                 "String": "TED_AR.part_underbarrel_06_malswitch",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Maliwan Element Switch"
             },
             {
                 "ID": "70",
                 "Part Type": "Underbarrel",
                 "String": "TED_AR.part_underbarrel_05_ammoswitcher",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Daedalus Ammo Switch"
             },
             {
                 "ID": "71",
@@ -8121,7 +8121,7 @@
                 "ID": "2",
                 "Part Type": "Body",
                 "String": "TED_PS.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "3",
@@ -8397,7 +8397,7 @@
                 "ID": "49",
                 "Part Type": "Underbarrel",
                 "String": "TED_PS.part_underbarrel_05_ammoswitcher",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Daedalus Ammo Switch"
             },
             {
                 "ID": "50",
@@ -8409,7 +8409,7 @@
                 "ID": "51",
                 "Part Type": "Underbarrel",
                 "String": "TED_PS.part_underbarrel_06_malswitch",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Maliwan Element Switch"
             },
             {
                 "ID": "52",
@@ -8597,7 +8597,7 @@
                 "ID": "2",
                 "Part Type": "Body",
                 "String": "TED_SG.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "3",
@@ -8915,13 +8915,13 @@
                 "ID": "55",
                 "Part Type": "Underbarrel",
                 "String": "TED_SG.part_underbarrel_05_ammoswitcher",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Daedalus Ammo Switch"
             },
             {
                 "ID": "56",
                 "Part Type": "Underbarrel",
                 "String": "TED_SG.part_underbarrel_06_malswitch",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Maliwan Element Switch"
             },
             {
                 "ID": "57",
@@ -9285,13 +9285,13 @@
                 "ID": "41",
                 "Part Type": "Underbarrel",
                 "String": "TOR_AR.part_underbarrel_05_ammoswitcher",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Daedalus Ammo Switch"
             },
             {
                 "ID": "42",
                 "Part Type": "Underbarrel",
                 "String": "TOR_AR.part_underbarrel_06_malswitch",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Maliwan Element Switch"
             },
             {
                 "ID": "43",
@@ -9351,7 +9351,7 @@
                 "ID": "52",
                 "Part Type": "Body",
                 "String": "TOR_AR.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "54",
@@ -9497,7 +9497,7 @@
                 "ID": "2",
                 "Part Type": "Body",
                 "String": "TOR_PS.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "3",
@@ -9731,13 +9731,13 @@
                 "ID": "41",
                 "Part Type": "Underbarrel",
                 "String": "TOR_PS.part_underbarrel_05_ammoswitcher",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Daedalus Ammo Switch"
             },
             {
                 "ID": "42",
                 "Part Type": "Underbarrel",
                 "String": "TOR_PS.part_underbarrel_06_malswitch",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Maliwan Element Switch"
             },
             {
                 "ID": "43",
@@ -9913,7 +9913,7 @@
                 "ID": "2",
                 "Part Type": "Body",
                 "String": "TOR_SG.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "3",
@@ -10147,13 +10147,13 @@
                 "ID": "41",
                 "Part Type": "Underbarrel",
                 "String": "TOR_SG.part_underbarrel_05_ammoswitcher",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Daedalus Ammo Switch"
             },
             {
                 "ID": "42",
                 "Part Type": "Underbarrel",
                 "String": "TOR_SG.part_underbarrel_06_malswitch",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Maliwan Element Switch"
             },
             {
                 "ID": "43",
@@ -10337,7 +10337,7 @@
                 "ID": "2",
                 "Part Type": "Body",
                 "String": "VLA_AR.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "3",
@@ -10595,7 +10595,7 @@
                 "ID": "45",
                 "Part Type": "Underbarrel",
                 "String": "VLA_AR.part_underbarrel_05_ammoswitcher",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Daedalus Ammo Switch"
             },
             {
                 "ID": "46",
@@ -10817,7 +10817,7 @@
                 "ID": "85",
                 "Part Type": "Underbarrel",
                 "String": "VLA_AR.part_underbarrel_06_malswitch",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Maliwan Element Switch"
             },
             {
                 "ID": "86",
@@ -10867,7 +10867,7 @@
                 "ID": "2",
                 "Part Type": "Body",
                 "String": "VLA_SM.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "3",
@@ -11131,7 +11131,7 @@
                 "ID": "47",
                 "Part Type": "Underbarrel",
                 "String": "VLA_SM.part_underbarrel_05_ammoswitcher",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Daedalus Ammo Switch"
             },
             {
                 "ID": "48",
@@ -11143,7 +11143,7 @@
                 "ID": "49",
                 "Part Type": "Underbarrel",
                 "String": "VLA_SM.part_underbarrel_06_malswitch",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Maliwan Element Switch"
             },
             {
                 "ID": "50",
@@ -11379,7 +11379,7 @@
                 "ID": "2",
                 "Part Type": "Body",
                 "String": "VLA_SR.part_body",
-                "Stats": "No stat changes, always present"
+                "Stats": "No Stat Changes, always present"
             },
             {
                 "ID": "3",
@@ -11637,13 +11637,13 @@
                 "ID": "45",
                 "Part Type": "Underbarrel",
                 "String": "VLA_SR.part_underbarrel_06_malswitch",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Maliwan Element Switch"
             },
             {
                 "ID": "46",
                 "Part Type": "Underbarrel",
                 "String": "VLA_SR.part_underbarrel_05_ammoswitcher",
-                "Stats": "Underbarrel switch, no effects"
+                "Stats": "Daedalus Ammo Switch"
             },
             {
                 "ID": "47",

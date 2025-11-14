@@ -45,15 +45,215 @@ function init() {
   attachEventListeners();
 }
 
+function normalizePartName(partString, stats = '') {
+  // Get the last part after the final dot
+  const partName = partString.split('.').pop();
+  
+  // Remove the "part_" prefix
+  let normalized = partName.replace(/^part_/, '');
+  
+  // Handle special cases and patterns
+  
+  // Main body (no suffix)
+  if (normalized === 'body') {
+    return 'Main Body';
+  }
+  
+  // Body accessories: body_a, body_b, etc.
+  if (/^body_[a-z]$/.test(normalized)) {
+    const letter = normalized.split('_')[1].toUpperCase();
+    return `Body Acc ${letter}`;
+  }
+  
+  // Barrel with number: barrel_01, barrel_02
+  if (/^barrel_\d+$/.test(normalized)) {
+    const num = normalized.split('_')[1];
+    return `Barrel ${num}`;
+  }
+  
+  // Barrel accessories: barrel_01_a, barrel_02_b, etc.
+  if (/^barrel_\d+_[a-z]$/.test(normalized)) {
+    const parts = normalized.split('_');
+    const num = parts[1];
+    const letter = parts[2].toUpperCase();
+    return `Barrel ${num} Acc ${letter}`;
+  }
+  
+  // Magazine patterns: mag_01, mag_03_tor, etc.
+  if (/^mag_\d+/.test(normalized)) {
+    const parts = normalized.split('_');
+    const num = parts[1];
+    
+    // Check for manufacturer suffix
+    if (parts.length > 2) {
+      const mfgCode = parts[2];
+      const mfgMap = {
+        'tor': 'Torgue',
+        'cov': 'CoV',
+        'borg': 'Ripper'
+      };
+      const mfg = mfgMap[mfgCode] || mfgCode.charAt(0).toUpperCase() + mfgCode.slice(1);
+      return `Mag ${num} ${mfg}`;
+    }
+    return `Mag ${num}`;
+  }
+  
+  // Magazine accessories: mag_ted_thrown_01, etc.
+  if (/^mag_ted_thrown/.test(normalized)) {
+    const num = normalized.split('_').pop();
+    return `Mag Acc Tediore ${num}`;
+  }
+  
+  // Grip: grip_01, grip_02, etc.
+  if (/^grip_\d+/.test(normalized)) {
+    const parts = normalized.split('_');
+    const num = parts[1];
+    
+    // Check for manufacturer suffix
+    if (parts.length > 2) {
+      const mfg = parts[2].charAt(0).toUpperCase() + parts[2].slice(1);
+      return `Grip ${num} ${mfg}`;
+    }
+    return `Grip ${num}`;
+  }
+  
+  // Grip accessories with Tediore modifiers
+  if (/^grip_\d+[a-z]_ted/.test(normalized)) {
+    const modifier = normalized.includes('jav') ? 'Javelin' : 
+                    normalized.includes('legs') ? 'Legs' : 
+                    normalized.includes('homing') ? 'Homing' : '';
+    return `Grip Tediore ${modifier}`;
+  }
+  
+  // Foregrip: foregrip_01, foregrip_02, etc.
+  if (/^foregrip_\d+$/.test(normalized)) {
+    const num = normalized.split('_')[1];
+    return `Foregrip ${num}`;
+  }
+  
+  // Scope: scope_01_lens_01, scope_ironsight, etc.
+  if (normalized.includes('scope')) {
+    if (normalized === 'scope_ironsight') {
+      return 'Ironsight';
+    }
+    const match = normalized.match(/scope_(\d+)_lens_(\d+)/);
+    if (match) {
+      return `Scope ${match[1]} Lens ${match[2]}`;
+    }
+  }
+  
+  // Scope accessories: scope_acc_s01_l01_a, etc.
+  if (normalized.includes('scope_acc')) {
+    const match = normalized.match(/scope_acc_s(\d+)_l(\d+)_([a-z])/);
+    if (match) {
+      return `Scope ${match[1]} Lens ${match[2]} Acc ${match[3].toUpperCase()}`;
+    }
+  }
+  
+  // Underbarrel - use stats field if available
+  if (normalized.includes('underbarrel')) {
+    if (stats) {
+      // Use the stats field directly as it contains the proper name
+      return stats;
+    }
+    
+    // Fallback patterns if stats not available
+    if (normalized.includes('atlas_ball')) return 'Atlas Tracker Grenades';
+    if (normalized.includes('atlas')) return 'Atlas Tracker Darts';
+    if (normalized.includes('malswitch')) return 'Maliwan Element Switch';
+    if (normalized.includes('ammoswitcher')) return 'Daedalus Ammo Switch';
+  }
+  
+  // Licensed/Manufacturer parts
+  if (normalized.includes('licensed') || normalized.includes('barrel_licensed')) {
+    if (normalized.includes('jak')) return 'Jakobs Ricochet';
+    if (normalized.includes('ted')) {
+      if (normalized.includes('shooting')) return 'Tediore Shooting';
+      if (normalized.includes('mirv')) return 'Tediore MIRV';
+      if (normalized.includes('combo')) return 'Tediore Combo';
+      return 'Tediore Reload';
+    }
+    if (normalized.includes('hyp')) return 'Hyperion Shield (Always Needed)';
+  }
+  
+  // Shield parts
+  if (normalized.includes('shield')) {
+    if (normalized.includes('ricochet')) return 'Hyperion Ricochet';
+    if (normalized.includes('ammo')) return 'Hyperion Absorb';
+    if (normalized.includes('amp')) return 'Hyperion Amp';
+    if (normalized.includes('default')) return 'Hyperion Default';
+  }
+  
+  // Torgue magazine modifiers
+  if (normalized.includes('mag_torgue')) {
+    if (normalized.includes('sticky')) return 'Torgue Sticky';
+    if (normalized.includes('normal')) return 'Torgue Impact';
+  }
+  
+  // Body magazine types (ammo type indicators)
+  if (normalized.includes('body_mag') || normalized.includes('secondary_ammo')) {
+    if (normalized.includes('_ar')) return 'Daedalus AR Ammo';
+    if (normalized.includes('_ps')) return 'Daedalus Pistol Ammo';
+    if (normalized.includes('_smg')) return 'Daedalus SMG Ammo';
+    if (normalized.includes('_sg')) return 'Daedalus Shotgun Ammo';
+    if (normalized.includes('_sr')) return 'Daedalus Sniper Ammo';
+  }
+  
+  // Stat modifiers (thrown magazine parts)
+  if (normalized.includes('mag_ted_thrown')) {
+    const num = normalized.split('_').pop();
+    return `Mag Stat Modifier ${num}`;
+  }
+  
+  // If no pattern matched, return a cleaned up version
+  // Capitalize first letter of each word and replace underscores with spaces
+  return normalized
+    .split('_')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+}
+
 function populateSelectWithParts(selectElement, partsList) {
+  if (partsList.length === 0) return;
+  
+  const partType = partsList[0]['Part Type'];
+  
   partsList.forEach(part => {
     const option = document.createElement('option');
     option.value = part.ID;
-    option.textContent = part.String.split('.').pop();
+    const partName = normalizePartName(part.String, part.Stats);
+    const stats = part.Stats || '';
+
+    // Determine what to show in dropdown
+    let displayStats = '';
+
+    // Skip showing stats for Manufacturer Parts and Underbarrels since the name already contains the info
+    if (partType !== 'Underbarrel' && partType !== 'Manufacturer Part') {
+      displayStats = stats;
+      if (stats.includes(',')) {
+        // Extended info
+        const statsParts = stats.split(',').map(s => s.trim());
+        
+        if (partType === 'Magazine') {
+          // For magazines, find and show only reload speed and shot count
+          const reloadSpeed = statsParts.find(s => s.toLowerCase().includes('reload'));
+          const shotCount = statsParts.find(s => s.toLowerCase().includes('shot'));
+          
+          const magazineStats = [reloadSpeed, shotCount].filter(Boolean);
+          displayStats = magazineStats.length > 0 ? magazineStats.join(', ') : statsParts[0];
+        } else {
+          // For others, show only first item
+          displayStats = statsParts[0];
+        }
+      }
+    }
+    
+    // Combine name and stats in the option text
+    option.textContent = displayStats ? `${partName} │ ${displayStats}` : partName;
     option.dataset.string = part.String;
-    option.dataset.stats = part.Stats || 'No stats available';
+    option.dataset.stats = stats;
     selectElement.appendChild(option);
-  })
+  });
 }
 
 // Populate manufacturers dropdown
@@ -478,7 +678,32 @@ function populateParts() {
     }
     partsByType[type].push(part);
   });
-  console.log(partsByType);
+  
+  // Sort parts within each type
+  Object.keys(partsByType).forEach(partType => {
+    partsByType[partType].sort((a, b) => {
+      const aString = a.String.split('.').pop();
+      const bString = b.String.split('.').pop();
+      
+      // Extract numbers if present for numeric sorting
+      const aMatch = aString.match(/\d+/);
+      const bMatch = bString.match(/\d+/);
+      
+      // If both have numbers, sort numerically
+      if (aMatch && bMatch) {
+        const aNum = parseInt(aMatch[0]);
+        const bNum = parseInt(bMatch[0]);
+        if (aNum !== bNum) {
+          return aNum - bNum;
+        }
+      }
+      
+      // Otherwise sort alphabetically
+      return aString.localeCompare(bString);
+    });
+  });
+  
+  // console.log(partsByType);
   
   // Clear parts grid
   partsGrid.innerHTML = '';
@@ -551,7 +776,7 @@ function populateParts() {
           const stats = selectedOption.dataset.stats;
           
           if (selectedOption.value && stats) {
-            statsDisplay.textContent = stats;
+            statsDisplay.textContent = stats; // Show full stats
             statsDisplay.title = stats;
           } else {
             statsDisplay.textContent = '';
@@ -604,7 +829,7 @@ function populateParts() {
             const stats = selectedOption.dataset.stats;
             
             if (selectedOption.value && stats) {
-              statsDisplay.textContent = stats;
+              statsDisplay.textContent = stats; // Show full stats
               statsDisplay.title = stats;
             } else {
               statsDisplay.textContent = '';
@@ -652,8 +877,8 @@ function populateParts() {
             stringDisplay.title = selectedOption.dataset.string;
             stringDisplay.classList.remove('hidden');
             
-            statsDisplay.textContent = stats;
-            statsDisplay.title = stats;
+            statsDisplay.textContent = stats; // Show full stats
+            statsDisplay.title = stats; 
           } else {
             stringDisplay.classList.add('hidden');
             statsDisplay.textContent = '';
