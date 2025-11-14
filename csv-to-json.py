@@ -21,7 +21,8 @@ def csv_to_json(input_csv, output_json):
                 part = {
                     'ID': row['ID'],
                     'Part Type': row['Part Type'],
-                    'String': row['String']
+                    'String': row['String'],
+                    'Stats': row['Stats']
                 }
                 
                 if manufacturer not in data:
@@ -54,7 +55,7 @@ def csv_to_json(input_csv, output_json):
         print(f"Error: The file {input_csv} was not found.")
     except KeyError as e:
         print(f"Error: Missing expected column in CSV: {e}")
-        print("Please ensure the CSV file has the correct headers: 'Manufacturer', 'Type', 'ID', 'Part Type', 'String'.")
+        print("Please ensure the CSV file has the correct headers: 'Manufacturer', 'Type', 'ID', 'Part Type', 'String', 'Stats'.")
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
         
