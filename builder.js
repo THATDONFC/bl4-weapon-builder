@@ -45,6 +45,17 @@ function init() {
   attachEventListeners();
 }
 
+function populateSelectWithParts(selectElement, partsList) {
+  partsList.forEach(part => {
+    const option = document.createElement('option');
+    option.value = part.ID;
+    option.textContent = part.String.split('.').pop();
+    option.dataset.string = part.String;
+    option.dataset.stats = part.Stats || 'No stats available';
+    selectElement.appendChild(option);
+  })
+}
+
 // Populate manufacturers dropdown
 function populateManufacturers() {
   const manufacturers = Object.keys(WEAPON_DATA);
@@ -525,17 +536,31 @@ function populateParts() {
         defaultOption.textContent = `Slot ${i + 1} - None`;
         select.appendChild(defaultOption);
         
-        partsList.forEach(part => {
-          const option = document.createElement('option');
-          option.value = part.ID;
-          option.textContent = part.String.split('.').pop();
-          option.dataset.string = part.String;
-          select.appendChild(option);
+        populateSelectWithParts(select, partsList);
+        
+        // Add compact stats display below the select
+        const statsDisplay = document.createElement('div');
+        statsDisplay.className = 'mt-1 text-xs text-cyan-400 truncate';
+        statsDisplay.style.maxWidth = '100%';
+        statsDisplay.title = '';
+        
+        select.addEventListener('change', (e) => {
+          handlePartSelection(e, partType, partsList, i);
+          
+          const selectedOption = e.target.options[e.target.selectedIndex];
+          const stats = selectedOption.dataset.stats;
+          
+          if (selectedOption.value && stats) {
+            statsDisplay.textContent = stats;
+            statsDisplay.title = stats;
+          } else {
+            statsDisplay.textContent = '';
+            statsDisplay.title = '';
+          }
         });
         
-        select.addEventListener('change', (e) => handlePartSelection(e, partType, partsList, i));
-        
         selectWrapper.appendChild(select);
+        selectWrapper.appendChild(statsDisplay);
         selectsContainer.appendChild(selectWrapper);
       }
       
@@ -553,7 +578,7 @@ function populateParts() {
         
         for (let i = 0; i < bodySlots; i++) {
           const selectWrapper = document.createElement('div');
-          
+  
           const select = document.createElement('select');
           select.className = 'w-full bg-gray-900 border border-orange-500 text-gray-300 rounded p-2 text-sm focus:outline-none focus:border-orange-400';
           select.dataset.partType = partType;
@@ -564,17 +589,31 @@ function populateParts() {
           defaultOption.textContent = `Slot ${i + 1} - None`;
           select.appendChild(defaultOption);
           
-          partsList.forEach(part => {
-            const option = document.createElement('option');
-            option.value = part.ID;
-            option.textContent = part.String.split('.').pop();
-            option.dataset.string = part.String;
-            select.appendChild(option);
+          populateSelectWithParts(select, partsList);
+          
+          // Add compact stats display below the select
+          const statsDisplay = document.createElement('div');
+          statsDisplay.className = 'mt-1 text-xs text-cyan-400 truncate';
+          statsDisplay.style.maxWidth = '100%';
+          statsDisplay.title = '';
+          
+          select.addEventListener('change', (e) => {
+            handlePartSelection(e, partType, partsList, i);
+            
+            const selectedOption = e.target.options[e.target.selectedIndex];
+            const stats = selectedOption.dataset.stats;
+            
+            if (selectedOption.value && stats) {
+              statsDisplay.textContent = stats;
+              statsDisplay.title = stats;
+            } else {
+              statsDisplay.textContent = '';
+              statsDisplay.title = '';
+            }
           });
           
-          select.addEventListener('change', (e) => handlePartSelection(e, partType, partsList, i));
-          
           selectWrapper.appendChild(select);
+          selectWrapper.appendChild(statsDisplay);
           selectsContainer.appendChild(selectWrapper);
         }
         
@@ -585,29 +624,47 @@ function populateParts() {
         const select = document.createElement('select');
         select.className = 'w-full bg-gray-900 border border-orange-500 text-gray-300 rounded p-2 text-sm focus:outline-none focus:border-orange-400';
         select.dataset.partType = partType;
-        
+
         const defaultOption = document.createElement('option');
         defaultOption.value = '';
         defaultOption.textContent = 'None';
         select.appendChild(defaultOption);
         
-        partsList.forEach(part => {
-          const option = document.createElement('option');
-          option.value = part.ID;
-          option.textContent = part.String.split('.').pop();
-          option.dataset.string = part.String;
-          select.appendChild(option);
-        });
-        
-        select.addEventListener('change', (e) => handlePartSelection(e, partType, partsList));
+        populateSelectWithParts(select, partsList);
         
         const stringDisplay = document.createElement('div');
         stringDisplay.className = 'mt-1 text-xs text-gray-400 truncate hidden';
         stringDisplay.dataset.partType = partType;
-        
+
+        const statsDisplay = document.createElement('div');
+        statsDisplay.className = 'mt-1 text-xs text-cyan-400 truncate';
+        statsDisplay.style.maxWidth = '100%';
+        statsDisplay.title = '';
+
+        select.addEventListener('change', (e) => {
+          handlePartSelection(e, partType, partsList);
+          
+          const selectedOption = e.target.options[e.target.selectedIndex];
+          const stats = selectedOption.dataset.stats;
+          
+          if (selectedOption.value && stats) {
+            stringDisplay.textContent = selectedOption.dataset.string;
+            stringDisplay.title = selectedOption.dataset.string;
+            stringDisplay.classList.remove('hidden');
+            
+            statsDisplay.textContent = stats;
+            statsDisplay.title = stats;
+          } else {
+            stringDisplay.classList.add('hidden');
+            statsDisplay.textContent = '';
+            statsDisplay.title = '';
+          }
+        });
+
         partDiv.appendChild(label);
         partDiv.appendChild(select);
         partDiv.appendChild(stringDisplay);
+        partDiv.appendChild(statsDisplay);
       }
     }
     

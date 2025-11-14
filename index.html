@@ -9,6 +9,43 @@
     .glow {
       text-shadow: 0 0 20px rgba(251, 146, 60, 0.5);
     }
+
+    .part-option-with-tooltip {
+      position: relative;
+    }
+
+    .part-tooltip {
+      visibility: hidden;
+      position: absolute;
+      z-index: 1000;
+      background-color: #1f2937;
+      border: 2px solid #f97316;
+      color: #d1d5db;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      white-space: nowrap;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-left: 10px;
+      pointer-events: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .part-option-with-tooltip:hover .part-tooltip {
+      visibility: visible;
+    }
+
+    .part-tooltip::before {
+      content: '';
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 6px solid transparent;
+      border-right-color: #f97316;
+    }
   </style>
 </head>
 <body class="min-h-screen bg-gradient-to-br from-orange-900 via-gray-900 to-black p-4">
