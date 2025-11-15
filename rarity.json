@@ -142,6 +142,11 @@
                   "ID": "63",
                   "String": "DAD_SM.comp_05_legendary_bloodstarved",
                   "Legendary": "Darkbeast"
+                },
+                {
+                  "ID": "65",
+                  "String": "DAD_SM.comp_05_legendary_Luty",
+                  "Legendary": "Luty Madlad"
                 }
             ]
         }
