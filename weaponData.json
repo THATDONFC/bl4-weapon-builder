@@ -35,19 +35,19 @@
                 "ID": "6",
                 "Part Type": "Barrel",
                 "String": "DAD_AR.part_barrel_01",
-                "Stats": "Spec-Tec Barrel, 571 Damage, 78% Acc, 6.8/s Fire Rate"
+                "Stats": "Spec-Tec Barrel, 571 Damage, 78% Acc, 6.8/s FR"
             },
             {
                 "ID": "7",
                 "Part Type": "Barrel",
                 "String": "DAD_AR.part_barrel_02",
-                "Stats": "F.A.N.G. Barrel, 669 Damage, 84% Acc, 5.5/s Fire Rate"
+                "Stats": "F.A.N.G. Barrel, 669 Damage, 84% Acc, 5.5/s FR"
             },
             {
                 "ID": "8",
                 "Part Type": "Barrel",
                 "String": "DAD_AR.part_barrel_unique_om",
-                "Stats": "Oscar Mike Barrel, 509 Damage, 76% Acc, 6.8/s Fire Rate"
+                "Stats": "Oscar Mike Barrel, 509 Damage, 76% Acc, 6.8/s FR"
             },
             {
                 "ID": "9",
@@ -437,7 +437,7 @@
                 "ID": "77",
                 "Part Type": "Barrel",
                 "String": "DAD_AR.part_barrel_02_star_helix",
-                "Stats": "Star Helix Barrel, 669 x 3 Damage, 78% Acc, 4.7/s Fire Rate"
+                "Stats": "Star Helix Barrel, 669 x 3 Damage, 78% Acc, 4.7/s FR"
             },
             {
                 "ID": "78",
@@ -1222,6 +1222,18 @@
                 "Part Type": "Barrel",
                 "String": "DAD_SG.part_barrel_heartgun",
                 "Stats": "Acey May, 279 x 14 Damage, 65% Acc, 2.0/s FR"
+            },
+            {
+                "ID": "56",
+                "Part Type": "Underbarrel",
+                "String": "DAD_SG.part_underbarrel_01_misslaser",
+                "Stats": "Switch for Missilaser Underbarrel"
+            },
+            {
+                "ID": "57",
+                "Part Type": "Barrel",
+                "String": "DAD_SG.part_barrel_misslaser",
+                "Stats": "Missilaser, 1673 Damage, 100% Acc, 3.0/s FR"
             },
             {
                 "ID": "61",
@@ -2230,6 +2242,12 @@
                 "Part Type": "Barrel",
                 "String": "JAK_AR.part_barrel_02_rowan",
                 "Stats": "Rowan's Charge, 1517 Damage, 75% Acc, 6.0/s FR"
+            },
+            {
+                "ID": "78",
+                "Part Type": "Barrel",
+                "String": "JAK_AR.part_barrel_02_rowdy",
+                "Stats": "Rowdy Rider, 2008 Damage, 64% Acc, 3.2/s FR, -55% Crit Damage"
             },
             {
                 "ID": "85",
@@ -6326,6 +6344,18 @@
                 "Part Type": "Barrel",
                 "String": "ORD_SR.part_barrel_01_fisheye",
                 "Stats": "Fisheye, 4919 Damage, 83% Acc, 1.2/s FR, +40% Crit Damage"
+            },
+            {
+                "ID": "77",
+                "Part Type": "Underbarrel",
+                "String": "ORD_SR.part_underbarrel_03_seamstress",
+                "Stats": "Switch for Rooker Underbarrel"
+            },
+            {
+                "ID": "78",
+                "Part Type": "Barrel",
+                "String": "ORD_SR.part_barrel_01_seamstress",
+                "Stats": "Rooker, 2342 Damage, 83% Acc, 2.0/s FR, +55% Crit Damage"
             }
         ]
     },
@@ -6874,6 +6904,12 @@
                 "Stats": "Hellfire, 758 Damage, 70% Acc, 6.8/s FR"
             },
             {
+                "ID": "21",
+                "Part Type": "Underbarrel",
+                "String": "BOR_SM.part_underbarrel_05_Roil",
+                "Stats": "Switch for Roil"
+            },
+            {
                 "ID": "22",
                 "Part Type": "Stat Modifier",
                 "String": "BOR_SM.part_mag_ted_thrown_01",
@@ -7076,6 +7112,12 @@
                 "Part Type": "Foregrip",
                 "String": "BOR_SM.part_foregrip_02",
                 "Stats": "+Fire Rate"
+            },
+            {
+                "ID": "57",
+                "Part Type": "Barrel",
+                "String": "BOR_SM.part_barrel_01_Roil",
+                "Stats": "Roil, 937 Damage, 70% Acc, 6.8/s FR"
             },
             {
                 "ID": "62",
@@ -8578,6 +8620,12 @@
                 "Part Type": "Grip",
                 "String": "TED_PS.part_grip_05a_ted_legs_mirv",
                 "Stats": "Tediore reload modifier: Legs, no stat changes"
+            },
+            {
+                "ID": "85",
+                "Part Type": "Barrel",
+                "String": "TED_PS.part_barrel_02_Inscriber",
+                "Stats": "Inscriber, 2342 Damage, 75% Acc, 2.5/s FR"
             }
         ],
         "Shotgun": [
@@ -9515,13 +9563,13 @@
                 "ID": "7",
                 "Part Type": "Barrel",
                 "String": "TOR_PS.part_barrel_01",
-                "Stats": "Kitty, 1785 DMG, 64% Acc, 2.5/s FR"
+                "Stats": "Kitty, 1785 Damage, 64% Acc, 2.5/s FR"
             },
             {
                 "ID": "8",
                 "Part Type": "Barrel",
                 "String": "TOR_PS.part_barrel_02",
-                "Stats": "Lotus, 2231 DMG, 65% Acc, 1.8/s FR"
+                "Stats": "Lotus, 2231 Damage, 65% Acc, 1.8/s FR"
             },
             {
                 "ID": "9",
@@ -9785,13 +9833,19 @@
                 "ID": "52",
                 "Part Type": "Barrel",
                 "String": "TOR_PS.part_barrel_02_queensrest",
-                "Stats": "Queen's Rest, 2231 DMG, 65% Acc, 2.6/s FR"
+                "Stats": "Queen's Rest, 2231 Damage, 65% Acc, 2.6/s FR"
             },
             {
                 "ID": "54",
                 "Part Type": "Barrel",
                 "String": "TOR_PS.part_barrel_01_roach",
-                "Stats": "Roach, 1338 DMG, 64% Acc, 2.2/s FR"
+                "Stats": "Roach, 1338 Damage, 64% Acc, 2.2/s FR"
+            },
+            {
+                "ID": "58",
+                "Part Type": "Barrel",
+                "String": "TOR_PS.part_barrel_02_breadth",
+                "Stats": "Hardpoint, 1115 x 5 Damage, 51% Acc, 1.5/s FR, 2 Shot"
             },
             {
                 "ID": "60",
@@ -9931,13 +9985,13 @@
                 "ID": "7",
                 "Part Type": "Barrel",
                 "String": "TOR_SG.part_barrel_01",
-                "Stats": "Rider, 1485 x 4 DMG, 67% Acc, 1.2/s FR - 2 Shot"
+                "Stats": "Rider, 1485 x 4 Damage, 67% Acc, 1.2/s FR - 2 Shot"
             },
             {
                 "ID": "8",
                 "Part Type": "Barrel",
                 "String": "TOR_SG.part_barrel_02",
-                "Stats": "Crank, 1673 x 4 DMG, 70% Acc, 1.0/s FR - 2 Shot"
+                "Stats": "Crank, 1673 x 4 Damage, 70% Acc, 1.0/s FR - 2 Shot"
             },
             {
                 "ID": "9",
@@ -10219,13 +10273,13 @@
                 "ID": "56",
                 "Part Type": "Barrel",
                 "String": "TOR_SG.part_barrel_02_leadballoon",
-                "Stats": "Lead Balloon, 1255 x 3 DMG, 70% Acc, 1.8/s FR - 2 Shot"
+                "Stats": "Lead Balloon, 1255 x 3 Damage, 70% Acc, 1.8/s FR - 2 Shot"
             },
             {
                 "ID": "58",
                 "Part Type": "Barrel",
                 "String": "TOR_SG.part_barrel_01_linebacker",
-                "Stats": "Linebacker, 781 x 4 DMG, 67% Acc, 1.0/s FR"
+                "Stats": "Linebacker, 781 x 4 Damage, 67% Acc, 1.0/s FR"
             },
             {
                 "ID": "61",
@@ -10319,7 +10373,7 @@
                 "ID": "1",
                 "Part Type": "Barrel",
                 "String": "VLA_AR.part_barrel_01_lucian",
-                "Stats": "Lucian's Flank, 647 DMG, 76% Acc, 11.5/s FR"
+                "Stats": "Lucian's Flank, 647 Damage, 76% Acc, 11.5/s FR"
             },
             {
                 "ID": "2",
@@ -10355,13 +10409,13 @@
                 "ID": "7",
                 "Part Type": "Barrel",
                 "String": "VLA_AR.part_barrel_01",
-                "Stats": "Buzzymuzz, 435 DMG, 78% Acc, 11.5/s FR"
+                "Stats": "Buzzymuzz, 435 Damage, 78% Acc, 11.5/s FR"
             },
             {
                 "ID": "8",
                 "Part Type": "Barrel",
                 "String": "VLA_AR.part_barrel_02",
-                "Stats": "Gruppagrak, 468 DMG, 82% Acc, 9.9/s FR"
+                "Stats": "Gruppagrak, 468 Damage, 82% Acc, 9.9/s FR"
             },
             {
                 "ID": "9",
@@ -10619,7 +10673,7 @@
                 "ID": "51",
                 "Part Type": "Underbarrel Accessory",
                 "String": "VLA_AR.part_underbarrel_shotgun_acc",
-                "Stats": "Increases Shotgun DMG"
+                "Stats": "Increases Shotgun Damage"
             },
             {
                 "ID": "52",
@@ -10691,7 +10745,7 @@
                 "ID": "64",
                 "Part Type": "Barrel",
                 "String": "VLA_AR.part_barrel_01_wombocombo",
-                "Stats": "Wombo Combo, 580 DMG, 78% Acc, 12.0/s FR"
+                "Stats": "Wombo Combo, 580 Damage, 78% Acc, 12.0/s FR"
             },
             {
                 "ID": "66",
@@ -10715,7 +10769,7 @@
                 "ID": "70",
                 "Part Type": "Barrel",
                 "String": "VLA_AR.part_barrel_01_dualdamage",
-                "Stats": "Aegon's Dream, 482 DMG, 76% Acc, 12.5/s FR"
+                "Stats": "Aegon's Dream, 482 Damage, 76% Acc, 12.5/s FR"
             },
             {
                 "ID": "71",
@@ -10847,7 +10901,7 @@
                 "ID": "94",
                 "Part Type": "Barrel",
                 "String": "VLA_AR.part_barrel_wf",
-                "Stats": "Whiskey Foxtrot, 848 DMG, 84% Acc, 6.1/s FR"
+                "Stats": "Whiskey Foxtrot, 848 Damage, 84% Acc, 6.1/s FR"
             }
         ],
         "SMG": [
@@ -10885,13 +10939,13 @@
                 "ID": "7",
                 "Part Type": "Barrel",
                 "String": "VLA_SM.part_barrel_01",
-                "Stats": "Boory, 424 DMG, 66% Acc, 12.3/s Fire Rate"
+                "Stats": "Boory, 424 Damage, 66% Acc, 12.3/s FR"
             },
             {
                 "ID": "8",
                 "Part Type": "Barrel",
                 "String": "VLA_SM.part_barrel_02",
-                "Stats": "Flewdy, 491 DMG, 73% Acc, 9.2/s Fire Rate"
+                "Stats": "Flewdy, 491 Damage, 73% Acc, 9.2/s FR"
             },
             {
                 "ID": "9",
@@ -11233,13 +11287,13 @@
                 "ID": "66",
                 "Part Type": "Barrel",
                 "String": "VLA_SM.part_barrel_01_kaoson",
-                "Stats": "Kaoson, 402 x 2 DMG, 83% Acc, 10.5/s Fire Rate"
+                "Stats": "Kaoson, 402 x 2 Damage, 83% Acc, 10.5/s FR"
             },
             {
                 "ID": "68",
                 "Part Type": "Barrel",
                 "String": "VLA_SM.part_barrel_01_onslaught",
-                "Stats": "Onslaught, 357 DMG, 76% Acc, 16.0/s Fire Rate"
+                "Stats": "Onslaught, 357 Damage, 76% Acc, 16.0/s FR"
             },
             {
                 "ID": "69",
@@ -11353,7 +11407,7 @@
                 "ID": "87",
                 "Part Type": "Barrel",
                 "String": "VLA_SM.part_barrel_beegun",
-                "Stats": "Birt's Bees, 528 DMG, 73% Acc, 12.4/s Fire Rate"
+                "Stats": "Birt's Bees, 528 Damage, 73% Acc, 12.4/s FR"
             }
         ],
         "Sniper": [
@@ -11361,7 +11415,7 @@
                 "ID": "1",
                 "Part Type": "Barrel",
                 "String": "VLA_SR.part_barrel_02_finnty",
-                "Stats": "Finnity XXX-L, 937 DMG, 94% Acc, 13.0/s FR, 50% Crit DMG"
+                "Stats": "Finnity XXX-L, 937 Damage, 94% Acc, 13.0/s FR, 50% Crit Damage"
             },
             {
                 "ID": "2",
@@ -11397,13 +11451,13 @@
                 "ID": "7",
                 "Part Type": "Barrel",
                 "String": "VLA_SR.part_barrel_01",
-                "Stats": "Ragoon Barrel, 1359 DMG, 87% ACC, 4.0/s FR, 50% Crit DMG"
+                "Stats": "Ragoon Barrel, 1359 Damage, 87% ACC, 4.0/s FR, 50% Crit Damage"
             },
             {
                 "ID": "8",
                 "Part Type": "Barrel",
                 "String": "VLA_SR.part_barrel_02",
-                "Stats": "Vyudazy Barrel, 1780 DMG, 87% ACC, 2.5/s FR, 50% Crit DMG"
+                "Stats": "Vyudazy Barrel, 1780 Damage, 87% ACC, 2.5/s FR, 50% Crit Damage"
             },
             {
                 "ID": "9",
@@ -11673,13 +11727,13 @@
                 "ID": "53",
                 "Part Type": "Underbarrel Accessory",
                 "String": "VLA_SR.part_underbarrel_shotgun_acc",
-                "Stats": "Increases Shotgun DMG"
+                "Stats": "Increases Shotgun Damage"
             },
             {
                 "ID": "54",
                 "Part Type": "Underbarrel Accessory",
                 "String": "VLA_SR.part_underbarrel_rocket_acc",
-                "Stats": "Increases Big Rocket DMG"
+                "Stats": "Increases Big Rocket Damage"
             },
             {
                 "ID": "55",
@@ -11751,7 +11805,7 @@
                 "ID": "68",
                 "Part Type": "Barrel",
                 "String": "VLA_SR.part_barrel_crowdsourced",
-                "Stats": "Midnight Defiance, 1359 DMG, 87% Acc, 4.0/s Reload, 50% Crit DMG"
+                "Stats": "Midnight Defiance, 1359 Damage, 87% Acc, 4.0/s FR, 50% Crit Damage"
             },
             {
                 "ID": "71",
@@ -11763,7 +11817,7 @@
                 "ID": "72",
                 "Part Type": "Barrel",
                 "String": "VLA_SR.part_barrel_01_stopgap",
-                "Stats": "Stop Gap, 1265 DMG, 87% Acc, 4.4/s Reload, 50% Crit DMG"
+                "Stats": "Stop Gap, 1265 Damage, 87% Acc, 4.4/s FR, 50% Crit Damage"
             },
             {
                 "ID": "73",

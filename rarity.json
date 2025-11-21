@@ -112,6 +112,11 @@
                   "ID": "55",
                   "String": "DAD_SG.comp_05_legendary_HeartGun",
                   "Legendary": "Acey May"
+                },
+                {
+                  "ID": "58",
+                  "String": "DAD_SG.comp_05_legendary_misslaser",
+                  "Legendary": "Missilaser"
                 }
             ]
         },
@@ -184,6 +189,11 @@
                   "ID": "74",
                   "String": "JAK_AR.comp_05_legendary_rowan",
                   "Legendary": "Rowan's Charge"
+                },
+                {
+                  "ID": "79",
+                  "String": "JAK_AR.comp_05_legendary_rowdy",
+                  "Legendary": "Rowdy Rider"
                 }
             ]
         },
@@ -548,6 +558,11 @@
                   "ID": "76",
                   "String": "ORD_SR.comp_05_legendary_symmetry",
                   "Legendary": "Symmetry"
+                },
+                {
+                  "ID": "79",
+                  "String": "ORD_SR.comp_05_legendary_Seamstress",
+                  "Legendary": "Rooker"
                 }
             ]
         }
@@ -625,6 +640,11 @@
                   "ID": "19",
                   "String": "BOR_SM.comp_05_legendary_hellfire",
                   "Legendary": "Hellfire"
+                },
+                {
+                  "ID": "56",
+                  "String": "BOR_SM.comp_05_legendary_Roil",
+                  "Legendary": "Roil"
                 }
             ]
         },
@@ -742,6 +762,11 @@
                   "ID": "66",
                   "String": "TED_PS.comp_05_legendary_RubysGrasp",
                   "Legendary": "Ruby's Grasp"
+                },
+                {
+                  "ID": "86",
+                  "String": "TED_PS.comp_05_legendary_Inscriber",
+                  "Legendary": "Inscriber"
                 }
             ]
         },
@@ -859,6 +884,11 @@
                   "ID": "53",
                   "String": "TOR_PS.comp_05_legendary_QueensRest",
                   "Legendary": "Queen's Rest"
+                },
+                {
+                  "ID": "59",
+                  "String": "TOR_PS.comp_05_legendary_Breadth",
+                  "Legendary": "Hardpoint"
                 }
             ]
         },
