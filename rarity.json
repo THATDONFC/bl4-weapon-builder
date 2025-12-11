@@ -363,6 +363,11 @@
                   "Legendary": "Sweet Embrace"
                 },
                 {
+                  "ID": "80",
+                  "String": "MAL_SG.comp_05_legendary_mantra",
+                  "Legendary": "Mantra"
+                },
+                {
                   "ID": "100",
                   "String": "MAL_SG.comp_05_legendary_Kickballer",
                   "Legendary": "Kickballer"
@@ -675,6 +680,11 @@
                   "ID": "19",
                   "String": "BOR_SR.comp_05_legendary_stray",
                   "Legendary": "Stray"
+                },
+                {
+                  "ID": "57",
+                  "String": "BOR_SR.comp_05_legendary_rainmaker",
+                  "Legendary": "Rainmaker"
                 },
                 {
                   "ID": "1",

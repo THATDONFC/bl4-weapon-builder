@@ -4012,6 +4012,12 @@
                 "Stats": "No Stat Changes"
             },
             {
+                "ID": "62",
+                "Part Type": "Barrel",
+                "String": "MAL_SG.part_barrel_02_mantra",
+                "Stats": "Mantra, 3430 Damage, 86% Acc, 2.3/s FR"
+            },
+            {
                 "ID": "63",
                 "Part Type": "Barrel Accessory",
                 "String": "MAL_SG.part_barrel_01_a",
@@ -7546,6 +7552,12 @@
                 "Part Type": "Underbarrel",
                 "String": "BOR_SR.part_underbarrel_03_marked",
                 "Stats": "Alt Fire - Target Marker"
+            },
+            {
+                "ID": "58",
+                "Part Type": "Barrel",
+                "String": "BOR_SR.part_barrel_02_rainmaker",
+                "Stats": "Rainmaker, 984 Damage, 93% Acc, 14.0/s FR, +50% Crit Damage"
             },
             {
                 "ID": "62",
